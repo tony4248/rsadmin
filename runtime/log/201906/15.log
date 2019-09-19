@@ -1,0 +1,553 @@
+---------------------------------------------------------------
+[ 2019-06-15T09:37:29+08:00 ] 0.0.0.0 GET /admin.php/admin/user/user_list
+[ info ] localhost/admin.php/admin/user/user_list [运行时间：1.253238s][吞吐率：0.80req/s] [内存消耗：2,224.23kb] [文件加载：45]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'host' => 'localhost',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:37:33+08:00 ] 0.0.0.0 GET /admin.php/admin/login/index
+[ info ] localhost/admin.php/admin/login/index [运行时间：0.475900s][吞吐率：2.10req/s] [内存消耗：1,961.73kb] [文件加载：43]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/user/user_list',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:37:34+08:00 ] 0.0.0.0 GET /admin.php/captcha
+[ info ] localhost/admin.php/captcha [运行时间：0.544483s][吞吐率：1.84req/s] [内存消耗：1,578.65kb] [文件加载：35]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ C:\inetpub\wwwroot\rsadmin\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:37:38+08:00 ] 0.0.0.0 POST /admin.php/admin/login/dologin
+[ info ] localhost/admin.php/admin/login/dologin [运行时间：0.786558s][吞吐率：1.27req/s] [内存消耗：2,772.14kb] [文件加载：49]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '40',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'dddd',
+)
+[ info ] [ RUN ] app\admin\controller\Login->doLogin[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013227s ] 
+[ sql ] [ Mongo ] db.admin.find({"$and":[{"username":"admin"}]}).limit(1); [ RunTime:0.021075s ]
+[ sql ] [ Mongo ] db.admin_login_log.insert({"admin_id":"930612","ip":"0.0.0.0","create_time":"2019-06-15 09:37:38"}); [ RunTime:0.001161s ]
+---------------------------------------------------------------
+[ 2019-06-15T09:37:42+08:00 ] 0.0.0.0 GET /admin.php/admin/index/index
+[ info ] localhost/admin.php/admin/index/index [运行时间：0.786538s][吞吐率：1.27req/s] [内存消耗：3,257.87kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'statistics',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000024s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":[],"limit":0}); [ RunTime:0.000809s ]
+[ sql ] [ Mongo ] db.count({"count":"agents","query":[],"limit":0}); [ RunTime:0.000731s ]
+[ sql ] [ Mongo ] db.count({"count":"clubs","query":[],"limit":0}); [ RunTime:0.000437s ]
+[ sql ] [ Mongo ] db.systemcaches.db.count({"count":"clubs","query":[],"limit":0}); [ RunTime:0.000489s ]
+---------------------------------------------------------------
+[ 2019-06-15T09:37:45+08:00 ] 0.0.0.0 GET /admin.php/admin/index/favicon.ico
+[ info ] localhost/admin.php/admin/index/favicon.ico [运行时间：0.473570s][吞吐率：2.11req/s] [内存消耗：2,330.81kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/index/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->_empty[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:37:46+08:00 ] 0.0.0.0 GET /admin.php/admin/index/index
+[ info ] localhost/admin.php/admin/index/index [运行时间：0.469215s][吞吐率：2.13req/s] [内存消耗：3,257.31kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/index/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'statistics',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000019s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":[],"limit":0}); [ RunTime:0.000455s ]
+[ sql ] [ Mongo ] db.count({"count":"agents","query":[],"limit":0}); [ RunTime:0.000389s ]
+[ sql ] [ Mongo ] db.count({"count":"clubs","query":[],"limit":0}); [ RunTime:0.000565s ]
+[ sql ] [ Mongo ] db.systemcaches.db.count({"count":"clubs","query":[],"limit":0}); [ RunTime:0.000688s ]
+---------------------------------------------------------------
+[ 2019-06-15T09:37:48+08:00 ] 0.0.0.0 GET /admin.php/admin/message/index
+[ info ] localhost/admin.php/admin/message/index [运行时间：0.858466s][吞吐率：1.16req/s] [内存消耗：3,196.77kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/index/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Message->index[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Message.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\message\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000022s ] 
+[ sql ] [ Mongo ] db.count({"count":"messages","query":{"$and":[{"sender":{"$ne":""}}]},"limit":0}); [ RunTime:0.000648s ]
+[ sql ] [ Mongo ] db.messages.find({"$and":[{"sender":{"$ne":""}}]}).limit(15); [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[ 2019-06-15T09:37:51+08:00 ] 0.0.0.0 GET /admin.php/admin/message/favicon.ico
+[ info ] localhost/admin.php/admin/message/favicon.ico [运行时间：1.039363s][吞吐率：0.96req/s] [内存消耗：2,300.82kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/message/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:37:52+08:00 ] 0.0.0.0 GET /admin.php/admin/message/add
+[ info ] localhost/admin.php/admin/message/add [运行时间：0.483759s][吞吐率：2.07req/s] [内存消耗：2,472.84kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/message/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Message->add[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\message\add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:38:11+08:00 ] 0.0.0.0 POST /admin.php/admin/message/add
+[ info ] localhost/admin.php/admin/message/add [运行时间：0.489116s][吞吐率：2.04req/s] [内存消耗：2,835.27kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '98',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/message/add',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'content' => '平台上线，好礼送不停',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Message->add[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Message.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'menu_tree',
+  1 => 'code',
+  2 => 'msg',
+  3 => 'data',
+  4 => 'url',
+  5 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005395s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.023157s ]
+---------------------------------------------------------------
+[ 2019-06-15T09:38:15+08:00 ] 0.0.0.0 GET /admin.php/admin/message/add
+[ info ] localhost/admin.php/admin/message/add [运行时间：0.450649s][吞吐率：2.22req/s] [内存消耗：2,318.83kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/message/add',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Message->add[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\message\add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-15T09:38:19+08:00 ] 0.0.0.0 GET /admin.php/admin/message/index
+[ info ] localhost/admin.php/admin/message/index [运行时间：0.459769s][吞吐率：2.18req/s] [内存消耗：3,024.39kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\rsadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/message/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=7drbtveps4nq28p3b0cvoihpf4',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Message->index[ C:\inetpub\wwwroot\rsadmin\application\admin\controller\Message.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\rsadmin\public/../application/admin\view\message\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000015s ] 
+[ sql ] [ Mongo ] db.count({"count":"messages","query":{"$and":[{"sender":{"$ne":""}}]},"limit":0}); [ RunTime:0.000897s ]
+[ sql ] [ Mongo ] db.messages.find({"$and":[{"sender":{"$ne":""}}]}).limit(15); [ RunTime:0.000490s ]

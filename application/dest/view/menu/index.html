@@ -1,0 +1,267 @@
+{include file="common:meta" /}
+
+<title>游戏列表 - 游戏列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/bootstrap/css/bootstrap.css"}
+{load href="__STATIC__/menu/menu/base.css"}
+{load href="__STATIC__/bootstrap/js/bootstrap.js"}
+{load href="__STATIC__/menu/menu/bootstrap-alert.js"}
+{load href="__STATIC__/admin/jquery-sortable.js"}
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        栏目管理
+        <span class="c-gray en">&gt;</span>
+        栏目列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="glyphicon glyphicon-link"></i> 后台栏目</li>
+            </ol>
+            <div class="box-padding">
+                <div class="add-menu-group btn btn-primary">添加栏目</div>
+                <ul class="menu-box">
+                    {foreach $menu_tree as $item}
+                    <li class="menu-group" data-title="{$item.title}">
+                        <div class="menu-1">
+                            <div class="menu-toggle">{$item.title}</div>
+                            <div class="menu-action">
+                                <div class="icon-svg editor editor1"></div>
+                                <div class="icon-svg add add-menu-nav"></div>
+                                <div class="icon-svg menu-delete-2 menu-dalete"></div>
+                                <div class="icon-svg menu-move menu-move-1"></div>
+                            </div>
+                        </div>
+                        <dl class="menu-2" style="display: none;">
+                            {foreach $item.nav as $nav}
+                            <dd class="menu-nav" data-url="{$nav.url}" data-title="{$nav.title}">
+                                <div class="icon-svg editor editor2"></div>
+                                <div class="menu-title">{$nav.title}</div>
+                                <div class="menu-action">
+                                    <div class="icon-svg menu-delete-2 menu-nav-dalete"></div>
+                                    <div class="icon-svg menu-move menu-move-2"></div>
+                                </div>
+                            </dd>
+                            {/foreach}
+                        </dl>
+                    </li>
+                    {/foreach}
+                </ul>
+                <button class="btn btn-primary btn-save">保存修改</button>
+
+            </div>
+
+            <template class="edit-title">
+                <div class="form-horizontal">
+                    <div class="form-group input-title">
+                        <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="标题">
+                        </div>
+                    </div>
+                    <div class="form-group input-url">
+                        <label for="inputEmail3" class="col-sm-2 control-label">链接</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="链接">
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </article>
+        <div style="float: right;"></div>
+    </div>
+
+
+</section>
+<!--{load href="__STATIC__/admin/layui/dist/layui.all.js"}-->
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    $(function () {
+        var adjustment;
+        var box = $(".menu-box").sortable({
+            group: 'menu-box',
+            handle: 'div.menu-move-1',
+            onDragStart: function ($item, container, _super) {
+                var offset = $item.offset(),
+                    pointer = container.rootGroup.pointer;
+
+                adjustment = {
+                    left: pointer.left - offset.left,
+                    top: pointer.top - offset.top
+                };
+
+                _super($item, container);
+            },
+            onDrag: function ($item, position) {
+
+                $item.css({
+                    left: position.left - adjustment.left,
+                    top: position.top - adjustment.top
+                });
+            },
+            onDrop: function ($item, container, _super, event) {
+                // console.log(container.target[0]);
+                // _super($item, container);
+                $item.removeClass(container.group.options.draggedClass).removeAttr("style");
+                $("body").removeClass(container.group.options.bodyClass)
+            }
+        });
+
+        var menu = $('dl.menu-2').sortable({
+            group: 'menu-2',
+            handle: 'div.menu-move-2',
+            containerSelector: 'dl',
+            itemSelector: 'dd',
+            placeholder: '<dd class="placeholder">',
+            onDragStart: function ($item, container, _super) {
+                var offset = $item.offset(),
+                    pointer = container.rootGroup.pointer;
+
+                adjustment = {
+                    left: pointer.left - offset.left,
+                    top: pointer.top - offset.top
+                };
+
+                _super($item, container);
+            },
+            onDrag: function ($item, position) {
+
+                $item.css({
+                    left: position.left - adjustment.left,
+                    top: position.top - adjustment.top
+                });
+            }
+        });
+        $('.btn-save').click(function () {
+            var menuGroupData = $(".menu-box").sortable("serialize").get(0);
+            var menuNavData = $('.menu-2').sortable("serialize").get();
+
+            var data = [];
+            for (var p in menuGroupData) {
+                var nav = menuNavData[p];
+                var navArr = [];
+                for (var _p in nav) {
+                    navArr.push({
+                        title: nav[_p].title,
+                        url: nav[_p].url
+                    });
+                }
+                data.push({
+                    title: menuGroupData[p].title,
+                    nav: navArr
+                });
+            }
+            $.post("{:url('System/set')}", {data: JSON.stringify({'menu_tree': JSON.stringify(data)})}, function(data) {
+                if (data.err) {
+                    $.modal.alert(data.msg);
+                } else {
+                    $.modal.alert('保存成功');
+                }
+            });
+
+        });
+        $(document).on('click', '.menu-toggle', function () {
+            $(this).parents('.menu-group').find('.menu-2').toggle(200);
+        });
+
+        $('.add-menu-group').click(function () {
+            var menu_2 = $('<dl class="menu-2"></dl>');
+            menu_2.sortable({ group: 'menu-2' });
+            var menu_group = $(`<li class="menu-group" data-title="新建栏目">
+        <div class="menu-1">
+          <div class="menu-toggle">新建栏目</div>
+          <div class="menu-action">
+            <div class="icon-svg editor editor1"></div>
+            <div class="icon-svg add add-menu-nav"></div>
+
+            <div class="icon-svg menu-delete-2  menu-dalete"></div>
+            <div class="icon-svg menu-move menu-move-1"></div>
+          </div>
+        </div>
+      </li>`);
+            menu_group.append(menu_2);
+            $(".menu-box").append(menu_group);
+
+        });
+        $(document).on('click', '.add-menu-nav', function () {
+            var $menu_2 = $(this).parents('.menu-group').find('.menu-2');
+            $menu_2.is(":hidden") && $menu_2.show(200);
+            $menu_2.append(`<dd class="menu-nav"  data-url="#" data-title="新建菜单">
+          <div class="icon-svg editor editor2"></div>
+          <div class="menu-title">新建菜单</div>
+          <div class="menu-action">
+            <div class="icon-svg menu-delete-2  menu-nav-dalete"></div>
+            <div class="icon-svg menu-move menu-move-2"></div>
+          </div>
+        </dd>`);
+        });
+        $(document).on('click', '.menu-dalete', function () {
+            $(this).parents('.menu-group').remove();
+        });
+        $(document).on('click', '.menu-nav-dalete', function () {
+            $(this).parents('.menu-nav').remove();
+        });
+
+        $(document).on('click', '.editor2', function () {
+            var $_this = $(this);
+            var $parent = $_this.parents('.menu-nav');
+            var $editForm = $($('.edit-title').html());
+
+            var $title = $editForm.find('.input-title input');
+            var $url = $editForm.find('.input-url input');
+            $title.val($parent.data('title'));
+            $url.val($parent.data('url'));
+
+            var myModal = $.modal({
+                title: '修改',
+                html: $editForm,
+                btn: [function ($btn) {
+                    $btn.text('确认').click(function() {
+                        $parent.data('title', $title.val());
+                        $parent.data('url', $url.val());
+                        $parent.find('.menu-title').text($title.val());
+                        myModal.close();
+                    });
+                }]
+            });
+        });
+
+        $(document).on('click', '.editor1', function () {
+            var $_this = $(this);
+            var $parent = $_this.parents('.menu-group');
+            var $editForm = $($('.edit-title').html());
+
+            var $title = $editForm.find('.input-title input');
+            $editForm.find('.input-url').remove();
+            $title.val($parent.data('title'));
+
+            var myModal = $.modal({
+                title: '修改',
+                html: $editForm,
+                btn: [function ($btn) {
+                    $btn.text('确认').click(function() {
+                        $parent.data('title', $title.val());
+                        $parent.find('.menu-toggle').text($title.val());
+                        myModal.close();
+                    });
+                }]
+            });
+        });
+    })
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

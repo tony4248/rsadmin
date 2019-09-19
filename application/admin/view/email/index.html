@@ -1,0 +1,107 @@
+{include file="common:meta" /}
+<title>邮件管理 - 邮件列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+            <span class="c-gray en">&gt;</span> 邮件管理
+            <span class="c-gray en">&gt;</span> 邮件列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="cl pd-5 bg-1 bk-gray mt-20">
+                    <span class="l"> <a href="javascript:;" onclick="email_add('添加邮件','/admin.php/admin/email/add','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加邮件</a> </span>
+                </div>
+                <form class="form-inline" role="form" method="get" action="{:url('email/search')}">
+                    <div class="form-group">
+                        <span style="color: red;">查询</span> 收件人Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="receiver" placeholder="请输入收件人Id" value="{$receiver ? $receiver : '';}">发件人Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="sender" placeholder="发件人Id" value="{$sender ? $sender : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="9">邮件列表</th>
+                        </tr>
+                        <tr class="text-c">
+                            <th width="40">发送者</th>
+                            <th width="40">接受者</th>
+                            <th width="70">标题</th>
+                            <th width="120">内容</th>
+                            <th width="20">已读</th>
+                            <th width="60">发送时间</th>
+                            <th width="60">接受时间</th>
+                            <th width="30">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.sender}</td>
+                            <td>{$vo.receiver}</td>
+                            <td>{$vo.title}</td>
+                            <td>{$vo.content}</td>
+                            <td class="td-status">
+                                {if condition="$vo.read eq 0"}<span class="label label-warning radius">未读</span> {else /}<span class="label label-success radius">已读</span> {/if}
+                            </td>
+                            <td>{$vo.sentDate}</td>
+                            <td>{$vo.receivedDate}</td>
+                            <td class="td-manage">
+                                <a title="编辑" href="javascript:;" onclick="email_reply('回复','/admin.php/admin/email/reply?id={$vo.id}','1','800','500')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">回复</a>
+                                <a title="删除" href="javascript:;" onclick="email_del({$vo.id})" class="ml-5 btn btn-warning-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                        </tr>
+                        {/volist}
+                    </tbody>
+                </table>
+                {$quick ?? ''}
+            </article>
+            <div style="float: right;">{$page}</div>
+        </div>
+    </section>
+    {include file="common:footer" /}
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        /*管理员-增加*/
+        function email_add(title, url, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*管理员-删除*/
+        function email_del(id) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('email/del')}",
+                    type: 'post',
+                    data: {
+                        'id': id,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+        /*管理员-编辑*/
+        function email_reply(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

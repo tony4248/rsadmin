@@ -1,0 +1,106 @@
+{include file="common:meta" /}
+
+<title>编辑管理员 - 管理员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="" method="post" class="form form-horizontal from-edit-save" id="form-admin-add">
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.username}" placeholder="" id="adminName" name="username">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.mobile}" placeholder="" id="mobile" name="mobile">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.email}" placeholder="@" name="email" id="email">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">备注：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <textarea name="note" cols="" rows="" class="textarea limit_100 advice" id="wishContent" placeholder="说点什么...<=20个字符以内" dragonfly="true">{$data.note}</textarea>
+                    <p class="limit statistics" style="color: red;float: right"></p>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" id="button" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+    <script>
+        /*texarea监听限制字数*/
+        $(function() {
+            var bind_name = 'input';
+            if (navigator.userAgent.indexOf("MSIE") != -1) { //（此处是为了兼容IE）
+                bind_name = 'propertychange';
+            }
+            if (navigator.userAgent.match(/android/i) == "android") {
+                bind_name = "keyup";
+            }
+
+            $(".limit_100").bind(bind_name, function() {
+                var limitSub = $(this).val().substr(0, 20);
+                $(this).val(limitSub); //截取字符长度
+                $(this).next('.statistics').html(limitSub.length + '/20'); //获取实时输入字符长度并显示
+                if (limitSub.length == 20) {
+                    $('.limit').css('color', 'red'); //超出指定字符长度标红提示
+                    alert('最多20个字！');
+                } else {
+                    $('.limit').css('color', '#333');
+                }
+            });
+        });
+
+
+        /*ajax提交form表单*/
+        $('#button').click(function() {
+            var formData = $('.from-edit-save').serialize();
+            $.ajax({
+                url: "{:url('admin/edit')}",
+                type: 'post',
+                data: formData,
+                success: function(res) {
+                    if (res.code === 0) {
+                        //失败
+                        layer.msg(res.msg, {
+                            icon: 2
+                        }, 300);
+                        var index = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload(); //刷新父级页面
+                            parent.layer.close(index); //关闭弹出层
+                        }, 2000);
+                    } else {
+                        //成功
+                        layer.msg(res.msg, {
+                            icon: 1
+                        }, 300);
+                        var index1 = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload();
+                            parent.layer.close(index1); //关闭弹出层
+                        }, 2000);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

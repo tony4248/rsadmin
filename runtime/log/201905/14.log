@@ -1,0 +1,45 @@
+---------------------------------------------------------------
+[ 2019-05-14T13:23:39+08:00 ] 0.0.0.0 GET /qipai/public/index.php/admin/admin/index
+[ info ] localhost/qipai/public/index.php/admin/admin/index [运行时间：1.758046s][吞吐率：0.57req/s] [内存消耗：3,135.81kb] [文件加载：58]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Admin->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Admin.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\admin\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008207s ] 
+[ sql ] [ Mongo ] db.count({"count":"admin","query":[],"limit":0}); [ RunTime:0.008207s ]
+[ sql ] [ Mongo ] db.admin.find().limit(15); [ RunTime:0.000752s ]
+[ error ] [0]类的属性不存在:app\admin\model\Admin->id[C:\inetpub\wwwroot\qipai\thinkphp\library\think\Model.php:624]

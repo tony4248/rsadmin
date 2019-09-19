@@ -1,0 +1,118 @@
+{include file="common:meta" /}
+
+<title>编辑商品 - 商城管理管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="" method="post" class="form form-horizontal from-edit-save" id="from-edit-save">
+            <input type="hidden" name="id" value="{$data.id}">
+            <input type="hidden" name="currencyType" value="{$data.currencyType}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>商品名称：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.name}" placeholder="" id="name" name="name">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>简单描述：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autocomplete="off" value="{$data.description}" placeholder="" id="description" name="description">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片名称：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.image}" placeholder="" id="image" name="image">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>类型：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="width: 150px;">
+                        <select class="select" size="1" id="type" name="type">
+                            <option value="CARD" {if condition="$data.type eq 'CARD'"}selected="selected"{/if}>钻石</option>
+                            <option value="COIN" {if condition="$data.type eq 'COIN'"}selected="selected"{/if}>金币</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数量：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.qty}" placeholder="" name="qty" id="qty">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>价格：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.price}" placeholder="单位数量的价格" name="price" id="price">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" id="button" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+    <script>
+        /*texarea监听限制字数*/
+        $(function() {
+            var bind_name = 'input';
+            if (navigator.userAgent.indexOf("MSIE") != -1) { //（此处是为了兼容IE）
+                bind_name = 'propertychange';
+            }
+            if (navigator.userAgent.match(/android/i) == "android") {
+                bind_name = "keyup";
+            }
+
+            $(".limit_100").bind(bind_name, function() {
+                var limitSub = $(this).val().substr(0, 20);
+                $(this).val(limitSub); //截取字符长度
+                $(this).next('.statistics').html(limitSub.length + '/20'); //获取实时输入字符长度并显示
+                if (limitSub.length == 20) {
+                    $('.limit').css('color', 'red'); //超出指定字符长度标红提示
+                    alert('最多20个字！');
+                } else {
+                    $('.limit').css('color', '#333');
+                }
+            });
+        });
+
+
+        /*ajax提交form表单*/
+        $('#button').click(function() {
+            var formData = $('.from-edit-save').serialize();
+            $.ajax({
+                url: "{:url('shop/edit_product')}",
+                type: 'post',
+                data: formData,
+                success: function(res) {
+                    if (res.code === 0) {
+                        //失败
+                        layer.msg(res.msg, {
+                            icon: 2
+                        }, 300);
+                    } else {
+                        //成功
+                        layer.msg(res.msg, {
+                            icon: 1
+                        }, 300);
+                        var index1 = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload();
+                            parent.layer.close(index1); //关闭弹出层
+                        }, 1000);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

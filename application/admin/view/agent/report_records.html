@@ -1,0 +1,46 @@
+{include file="common:meta" /}
+
+<title>业绩记录 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+            <tr class="text-c">
+                <th width="120">批次号</th>
+                <th>总业绩</th>
+                <th>只身业绩</th>
+                <th>团队业绩</th>
+                <th>自身佣金</th>
+                <th>团队佣金</th>
+                <th>报告周期</th>
+                <th>开始时间</th>
+                <th>截止时间</th>
+            </tr>
+            {volist name="data" id="vo"}
+            <tr class="text-c">
+                <td id="id1">{$vo.batchId}</td>
+                <td>{$vo.perfSum}</td>
+                <td>{$vo.selfPerf}</td>
+                <td>{$vo.teamMembersPerf}</td>
+                <td>{$vo.rebateSum}</td>
+                <td>{$vo.teamRebate}</td>
+                <td>{$vo.periodType}</td>
+                <td>{$vo.startTime}</td>
+                <td>{$vo.endTime}</td>
+            </tr>
+            {/volist}
+        </table>
+    </div>
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

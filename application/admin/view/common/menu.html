@@ -1,0 +1,28 @@
+<?php
+    $title = '';
+    foreach ($menu_tree as $item) {
+        foreach($item['nav'] as $val) {
+            if ($val['url'] == '/admin.php/' . request()->pathinfo()) {
+                $title = $item['title'];
+            }
+        }
+    }
+?>
+<aside class="Hui-aside">
+    <div class="menu_dropdown bk_2">
+        {volist name="menu_tree" id="vo"}
+        <dl>
+            <dt class="{if condition="$vo.title==$title"}selected{/if}"><i class="Hui-iconfont">&#xe63c;</i> {$vo.title}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd style="{if condition="$vo.title==$title"}display: block{/if}">
+                <ul>
+                    {volist name="$vo.nav" id="nav"}
+                    <li><a href="{$nav.url}" title="{$nav.title}">{$nav.title}</a></li>
+                    {/volist}
+                </ul>
+            </dd>
+        </dl>
+        {/volist}
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<script>
+</script>

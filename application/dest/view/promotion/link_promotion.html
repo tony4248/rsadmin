@@ -1,0 +1,52 @@
+{include file="common:meta" /}
+
+<title>推广列表 - 链接推广 </title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        代理推广
+        <span class="c-gray en">&gt;</span>
+        链接推广 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article" style="text-align: center">
+        <b>我的链接推广码</b>
+        <img style="text-align: center" src="data:image/png;base64,{$data.data}" />
+
+    </div>
+</section>
+
+{include file="common:footer" /}
+<script>
+    success: function() {
+        if (r.code==200) {
+            //console.log(r);
+            var path = 'data:image/png;base64,'+r.data;
+            //给img的sec赋值。
+
+            $("#qrcode").attr('src',path);
+        } else {
+            alert(r.err);
+        }
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

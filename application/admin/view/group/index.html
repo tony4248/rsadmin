@@ -1,0 +1,107 @@
+{include file="common:meta" /}
+
+    <title>角色管理 - 管理员管理 - RSCMS_V2</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 管理员管理 <span class="c-gray en">&gt;</span> 角色管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('添加用户组','/admin.php/admin/group/add','800')"><i class="Hui-iconfont">&#xe600;</i> 添加用户组</a> </span>  </div>
+            <div class="mt-10">
+                <div class="table-responsive">
+                <table class="table table-border table-bordered table-hover table-bg">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="6">角色管理</th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="10">ID</th>
+                        <th width="30">角色名</th>
+                        <th width="10">所属管理员</th>
+                        <th width="20">状态</th>
+                        <th width="20">分配权限</th>
+                        <th width="10">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="data" id="vo"}
+                    <tr class="text-c">
+                        <td>{$vo.id}</td>
+                        <td>{$vo.title}</td>
+                        <td><span class="btn btn-default radius" onclick="cha_kan({$vo.id})">点我查看管理员</span></td>
+                        <td>
+                        {if condition="$vo.status==0"}<span class="label label-success radius">正常</span>
+                            {else /}<span class="label label-danger radius">禁用</span>{/if}
+
+                        </td>
+                        <td>
+                         <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('修改权限','/admin.php/admin/group/power?id={$vo.id}','800')"><i class="Hui-iconfont">&#xe600;</i> 分配权限</a>
+                        </td>
+                        <td class="f-14">
+                            <a title="编辑" class="btn btn-warning-outline radius size-MINI" href="javascript:;" onclick="admin_role_edit('角色编辑','/admin.php/admin/group/edit?id={$vo.id}','1')" style="text-decoration:none">编辑</a>
+                            <a title="删除"  href="javascript:;" onclick="del({$vo.id})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-编辑*/
+    function admin_role_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    function del(id){
+        $.post('/admin.php/admin/group/del',{'gid':id},function (res) {
+            if(res.code=0){
+                layer.msg(res.msg);
+            }else{
+                layer.msg(res.msg);
+            }
+        })
+    }
+
+    /*查看所属管理员*/
+    function cha_kan(id){
+        var b = browserRedirect();
+        if(b===0){
+            rim = ['420px', '240px']
+        }else{
+            rim = ['100%','100%']
+        }
+        $.post("{:url('group/cha_kan')}", {'id':id}, function(re){
+            layer.open({
+                type: 1,
+                title: '管理员',
+                shadeClose: true,
+                skin: 'layui-layer-rim', //加上边框
+                area: rim, //宽高
+                content: re
+            });
+        });
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+{include file="common:meta" /}
+
+<title>俱乐部会员 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <div class="table-responsive">
+            <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                <tr class="text-c">
+                    <th width="50">ID</th>
+                    <th>账号</th>
+                    <th>昵称</th>
+                    <th>等级</th>
+                    <th>管理员角色</th>
+                    <th>积分</th>
+                    <th>状态</th>
+                    <th width="">加入时间</th>
+                </tr>
+                {volist name="data" id="vo"}
+                <tr class="text-c">
+                    <td id="id1">{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.nickName}</td>
+                    <td>{$vo.level}</td>
+                    <td>{if condition="$vo.adminRole eq 'NONE'"}无{elseif condition="$vo.adminRole eq 'ASSISTANT'"/}助理管理员{elseif condition="$vo.adminRole eq 'ADMINISTRATOR'"/}管理员{elseif condition="$vo.adminRole eq 'SUPERADMIN'"/}超级管理员{else /}未知{/if}</td>
+                    <td>{$vo.score}</td>
+                    <td>{if condition="$vo.state eq 'PENDING'"}待审批{elseif condition="$vo.state eq 'APPROVED'"/}已批准{elseif condition="$vo.state eq 'DENIED'"/}已拒绝{elseif condition="$vo.state eq 'DISABLED'"/}已禁止{else /}未知{/if}</td>
+                    <td>{$vo.createTime}</td>
+                </tr>
+                {/volist}
+            </table>
+        </div>
+        <div style="float: right;">{$page}</div>
+    </div>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

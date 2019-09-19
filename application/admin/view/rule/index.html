@@ -1,0 +1,152 @@
+{include file="common:meta" /}
+<title>菜单管理</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/admin/layui/dist/css/layui.css"}
+{load href="__STATIC__/admin/layui/dist/layui.js"}
+{load href="__STATIC__/admin/lib/jquery/1.9.1/jquery.min.js"}
+<style>
+    /** 箭头未展开 */
+    /*#table1 + .treeTable .treeTable-icon .layui-icon-triangle-d:before {*/
+        /*content: "\e602";*/
+    /*}*/
+
+    /** 箭头展开 */
+    #table1 + .treeTable .treeTable-icon.open .layui-icon-triangle-d:before {
+        content: "\e61a";
+    }
+
+    /** 文件图标 */
+    #table1 + .treeTable .treeTable-icon .layui-icon-file:before {
+        content: "\e655";
+    }
+
+    /** 文件夹未展开 */
+    /*#table1 + .treeTable .treeTable-icon .layui-icon-layer:before {*/
+        /*content: "\e637";*/
+    /*}*/
+
+    /** 文件夹展开 */
+    #table1 + .treeTable .treeTable-icon.open .layui-icon-layer:before {
+        content: "\e634";
+    }
+</style>
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span> 权限列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="mt-10">
+                <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="admin_role_add('添加规则','/admin.php/admin/rule/add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 规则添加</a></span> </div>
+                        <div class="btn-group">
+                            <button class="btn btn-default radius" id="btn-expand">全部展开</button>
+                            <button class="btn btn-default radius" id="btn-fold">全部折叠</button>
+                            <button class="btn btn-default radius" id="btn-refresh">刷新表格</button>
+                        </div>
+
+                    <table id="table1" class="table table-border table-bordered table-hover table-bg" lay-filter="table1"></table>
+
+                    <script type="text/html" id="oper-col">
+                        <a class="btn btn-success-outline radius size-MINI" lay-event="edit">修改</a>
+                        <a class="btn btn-warning-outline radius size-MINI" lay-event="del">删除</a>
+                    </script>
+            </div>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<script type="text/javascript">
+    layui.config({
+        base: '__STATIC__/menu/treetable-lay/module/'
+    }).extend({
+        treetable: 'treetable-lay/treetable'
+    }).use(['layer', 'table', 'treetable'], function () {
+        var $ = layui.jquery;
+        var table = layui.table;
+        var layer = layui.layer;
+        var treetable = layui.treetable;
+
+        // 渲染表格
+        var renderTable = function () {
+            layer.load(2);
+            treetable.render({
+                treeColIndex: 1,
+                treeSpid: 0,
+                treeIdName: 'id',
+                treePidName: 'pid',
+                treeDefaultClose: true,
+                treeLinkage: false,
+                elem: '#table1',
+                url: "{:url('rule/getRuleJsonData')}",
+                page: false,
+                cols: [[
+                    {type: 'numbers'},
+                    {field: 'title', title: '名称'},
+                    {field: 'name', title: '规则'},
+                    {field: 'status', title: '状态'},
+                    {templet: '#oper-col', title: '操作'}
+                ]],
+                done: function () {
+                    layer.closeAll('loading');
+                }
+            });
+        };
+
+        renderTable();
+
+        $('#btn-expand').click(function () {
+            treetable.expandAll('#table1');
+        });
+
+        $('#btn-fold').click(function () {
+            treetable.foldAll('#table1');
+        });
+
+        $('#btn-refresh').click(function () {
+            renderTable();
+        });
+
+        /**监听工具条**/
+        table.on('tool(table1)', function (obj) {
+            var data = obj.data;
+            var layer = layui.layer;
+            var layEvent = obj.event;
+            if (layEvent === 'del') {
+                $.get("{:url('rule/del')}",{'id':data.id},function (result) {
+                    if(result.code === 0){
+                        layer.msg(result.msg,{icon:1})
+//                        setTimeout(function () {
+//                            window.location.reload();
+//                        },2000)
+                    }else{
+                        layer.msg(result.msg,{icon:2});
+                    }
+                })
+            } else if (layEvent === 'edit') {
+                layer.open({
+                    type: 2,
+                    area: ['600px', '400px'],
+                    shadeClose:true,
+                    content: "/admin.php/admin/rule/edit?id="+data.id //这里content是一个普通的String
+                });
+            }
+        });
+    });
+
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,'500');
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

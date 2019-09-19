@@ -1,0 +1,96 @@
+{include file="common:meta" /}
+<title>机器人输赢 - 机器人明细 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 资金 <span class="c-gray en">&gt;</span> 机器人明细<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="mt-20">
+                <form class="form-inline" role="form" method="get" action="{:url('user/robotWinOrLose')}">
+                    <div class="form-group">
+                        <span style="color: red;">明细查询</span> 用户:<input style="width: 120px;" type="text" class="input-text" name="nickname" placeholder="请输入账号" value="{$nickname ? $nickname : '';}">
+                        游戏:<input style="width: 120px;" type="text" class="input-text" name="game" placeholder="请输入游戏名" value="{$game ? $game : '';}">
+                        操作方式:<input style="width: 120px;" type="text" class="input-text" name="action" placeholder="请输入操作方式" value="{$action ? $action : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <div class="table-responsive">
+                    <table class="table table-border table-bordered table-hover table-bg table-sort" id="mytable">
+                        <thead>
+                        <tr class="text-c">
+                            <th width="10">ID</th>
+                            <th width="20">机器人名称</th>
+                            <th width="50">游戏</th>
+                            <th width="20">操作方式</th>
+                            <th width="30">变动金额</th>
+                            <th width="20">操作前余额</th>
+                            <th width="15">操作后余额</th>
+                            <th width="20">备注说明</th>
+                            <th width="10">创建时间</th>
+                            <th width="10">创建IP</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.user_id}</td>
+                            <td>{$vo.game_id}</td>
+                            <td>{$vo.action_id}</td>
+                            <td>{$vo.coin}</td>
+                            <td>{$vo.before_coin}</td>
+                            <td>{$vo.after_coin}</td>
+                            <td>{$vo.info}</td>
+                            <td>{$vo.create_time}</td>
+                            <td>{$vo.create_ip}</td>
+                        </tr>
+                        {/volist}
+                        <tr class="text-c" id="totalRow">
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>{$quick ?? ''}</div>
+            </div>
+        </article>
+        <div style="float: right;"></div>
+    </div>
+</section>
+{include file="common:footer" /}
+<script type="text/javascript">
+    laydate.render({
+        elem: '#test1' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true
+    });
+    laydate.render({
+        elem: '#test2' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true
+    });
+
+    /*列表统计*/
+    $(document).ready(function() {
+        var totalRow = 0;
+        $('#mytable tr').each(function() {
+            $(this).find('td:eq(4)').each(function(){
+                totalRow += parseFloat($(this).text());
+            });
+        });
+
+        $('#totalRow').append('<td colspan="3">当前页合计</td><td colspan="1" style="text-align: center"><span style="color: #761c19">当前页总变动金额：</span></td><td>'+totalRow+'</td><td></td><td></td><td></td><td></td><td></td>');
+    });
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

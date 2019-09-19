@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {load href="__STATIC__/admin/base.less"}
+    {load href="__STATIC__/admin/lib/jquery/1.9.1/jquery.min.js"}
+</head>
+<body>
+
+<style>
+    body {
+        text-align: center;
+    }
+    .red {
+        color: red;
+        font-size: 18px;
+        font-weight: 1000;
+    }
+    .t_amount {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    #qrcode img{
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+    .qr_box {
+        margin: 10px 20px;
+        padding: 10px;
+        border: 1px solid #eee;
+        color: #c7bc1c;
+    }
+    .pay {
+        display: block;
+        width: 100%;
+        line-height: 36px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        font-size: 1rem;
+        border-radius: 5px;
+        color: #FFFFFF;
+        font-size: 20px;
+        background-color: #198ae3;
+        border-color: #198ae3;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .pay_btn_box {
+        margin: 5px 20px;
+    }
+    .tips {
+        padding: 0 20px;
+        color: #333;
+    }
+    .header {
+        padding: 10px;
+        background: #eff3f7;
+    }
+    .tt_box {
+        font-size: 16px;
+    }
+</style>
+<div class="header">
+    <img src="/static/admin/alipay.png" alt="">
+</div>
+<div class="qr_box">
+    <div class="tt_box">支付金额请输入 <span class="t_amount red">{$amount}</span> 元</div>
+    <div id="qrcode">
+        <img id="qrcode_load" style="display: block;">
+    </div>
+</div>
+<!--<div class="tips">扫码后输入的金额，必须是（<span class="red">二维码</span>）上方显示的数字（<span class="red">{$amount}</span>）否则无法到账！</div>-->
+<div class="tips">扫码后输入的金额，<span class="red">请误修改金额</span>,否则无法到账！</div>
+<div class="pay_btn_box">
+    <button class="pay">立即支付</button>
+</div>
+<div>{$end_time} 后过期，过期后请勿支付！</div>
+<div>重复扫码不到账，请只支付一次</div>
+<div>订单号：<u>{$trade_no}</u></div>
+
+{load href="__STATIC__/admin/qrcode/qrcode.js"}
+<script>
+    var alipayQRUrl = "{$qrcode}";
+    $('#qrcode').empty();
+    var qrcode = new QRCode('qrcode', {
+        text: alipayQRUrl,
+        width: 256,
+        height: 256,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+    });
+    $('.pay').click(function () {
+        pay(alipayQRUrl);
+    });
+    function pay(url) {
+        window.location.href = alipayQRUrl;
+    }
+
+    var checkStatus = function() {
+        $.getJSON("{:url('order/status')}", {order_id: {$order_id}}).then(function(res) {
+            if (res.err) {
+                return;
+            }
+            if (res.status) {
+                alert('充值成功');
+                location.href="{$success_url}";
+                return;
+            }
+            if (!res.status) {
+                setTimeout(checkStatus, 2000);
+            }
+        });
+    };
+    checkStatus();
+</script>
+
+</body>
+</html>

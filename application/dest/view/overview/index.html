@@ -1,0 +1,66 @@
+{include file="common:meta" /}
+
+<title>运营管理 - 数据总览</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    /* css 代码  */
+</style>
+<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+        <span class="c-gray en">&gt;</span>
+        运营管理
+        <span class="c-gray en">&gt;</span>
+        数据总览 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <table class="table table-border table-bordered table-bg radius table-hover">
+        <thead>
+        <tr>
+            <th scope="col" colspan="9">数据总览</th>
+        </tr>
+        <tr class="text-c">
+            <th width="40">直线代理</th>
+            <th width="40">直线会员</th>
+            <th width="30">直线会员剩余总coin</th>
+            <th width="30">直线会员输赢</th>
+            <th width="30">直线会员总下注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-c active" style="height: 10px;">
+            <td><span class="label label-primary radius">{$line_agent}</span></td>
+            <td><span class="label label-secondary radius">{$line_member}</span></td>
+            <td><span class="label label-success radius">{$linePersonalCoinAll}</span></td>
+            <td><span class="label label-success radius">{$lineMemberWinOrLose}</span></td>
+            <td><span class="label label-success radius">{$line_member_bat}</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</section>
+{include file="common:footer" /}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

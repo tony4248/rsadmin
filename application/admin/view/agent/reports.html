@@ -1,0 +1,125 @@
+{include file="common:meta" /}
+<title>代理管理 - 业绩报表</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 代理管理 <span class="c-gray en">&gt;</span> 业绩报表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <form class="form-inline" role="form" method="get" action="{:url('agent/search')}">
+                    <div class="form-group">
+                        <span style="color: red;">代理查询</span> 用户Id:<input style="width: 120px;" type="text" class="input-text" name="userId" placeholder="请输入用户Id" value="{$userId ? $userId : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">代理查询</button>
+                </form>
+                <div class="mt-10">
+                    <div class="table-responsive">
+                        <table class="table table-border table-bordered table-hover table-bg" id="mytable">
+                            <thead>
+                                <tr class="text-c">
+                                    <th colspan="5"></th>
+                                    <th colspan="5">本期业绩</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="text-c">
+                                    <th width="10">Id</th>
+                                    <th>账号</th>
+                                    <th>可提金额</th>
+                                    <th>累计佣金</th>
+                                    <th>累计提现</th>
+                                    <th>总业绩</th>
+                                    <th>自身业绩</th>
+                                    <th>团队业绩</th>
+                                    <th>自身佣金</th>
+                                    <th>团队佣金</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="data" id="vo"}
+                                <tr class="text-c">
+                                    <td id="uid" width="70">{$vo.uid}</td>
+                                    <td>{$vo.name}</td>
+                                    <td>{$vo.availBalance}</td>
+                                    <td>{$vo.rebateSum}</td>
+                                    <td>{$vo.withdrawSum}{if condition="$vo.withdrawSum > 0"}<a href="javascript:;" onClick="view_records('提现记录','/admin.php/admin/agent/withdraw_records?userId={$vo.uid}','4','','600')"> | <span
+                                        style="color: #ff0000">记录</span></a>{/if}
+                                    </td>
+                                    <td>{$vo.perfSum}</td>
+                                    <td>{$vo.selfPerf}</td>
+                                    <td>{$vo.teamMembersPerf}</td>
+                                    <td>{$vo.rebateSum}</td>
+                                    <td>{$vo.teamRebate}</td>
+                                    <td class="td-manage">
+                                        <a href="javascript:;" onClick="view_records('业绩记录','/admin.php/admin/agent/report_records?userId={$vo.uid}','4','','600')" class="btn btn-secondary-outline radius size-MINI" style="text-decoration:none">业绩记录</a>
+                                    </td>
+                                </tr>
+                                {/volist}
+
+                            </tbody>
+                            {$quick ? $quick : ''}
+                            <tr id="totalRow" class="text-c">
+                                <td rowspan="2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+    {include file="common:footer" /}
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        /*代理-业绩记录*/
+        function view_records(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        function user_statistics(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        laydate.render({
+            elem: '#test1' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test2' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var totalRow = 0;
+            $('#mytable tr').each(function() {
+                $(this).find('td:eq(4)').each(function() {
+                    totalRow += parseFloat($(this).text());
+                });
+            });
+
+            var total_bet = 0;
+            $('#mytable tr').each(function() {
+                $(this).find('td:eq(5)').each(function() {
+                    total_bet += parseFloat($(this).text());
+                });
+            });
+            $('#totalRow').append('<td>当前页合计</td><td style="text-align: center">{$perfSum.totalABSum}</td><td style="text-align: center">{$perfSum.totalRBSum}</td><td  style="text-align: center">{$perfSum.totalWRSum}</td><td></td><td></td><td></td><td></td><td></td><td></td>');
+        });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

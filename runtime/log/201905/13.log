@@ -1,0 +1,1260 @@
+---------------------------------------------------------------
+[ 2019-05-13T21:16:29+08:00 ] 0.0.0.0 GET /qipai/public/index.php
+[ info ] localhost/qipai/public/index.php [运行时间：1.542241s][吞吐率：0.65req/s] [内存消耗：2,486.82kb] [文件加载：50]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-05-13T21:17:10+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.523331s][吞吐率：1.91req/s] [内存消耗：2,380.16kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:11+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+[ info ] localhost/qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9 [运行时间：0.472121s][吞吐率：2.12req/s] [内存消耗：2,361.90kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'undefinedcss',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'v' => '5.0.9',
+  'modules' => 'laydate',
+  'default' => 'laydate',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:12+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：0.890350s][吞吐率：1.12req/s] [内存消耗：3,160.23kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-05-13T21:17:13+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：1.367351s][吞吐率：0.73req/s] [内存消耗：2,380.09kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:37+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/index
+[ info ] localhost/qipai/public/admin.php/index [运行时间：1.862561s][吞吐率：0.54req/s] [内存消耗：1,795.23kb] [文件加载：37]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\inetpub\wwwroot\qipai\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]Can not connect to tcp://127.0.0.1:1238 ����Ŀ�����������ܾ����޷����ӡ�
+[C:\inetpub\wwwroot\qipai\extend\GatewayClient\Gateway.php:1301]
+---------------------------------------------------------------
+[ 2019-05-13T21:17:43+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.437936s][吞吐率：2.28req/s] [内存消耗：2,380.16kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:44+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.439701s][吞吐率：2.27req/s] [内存消耗：2,380.09kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:45+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：1.211678s][吞吐率：0.83req/s] [内存消耗：3,160.23kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-05-13T21:17:46+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.458057s][吞吐率：2.18req/s] [内存消耗：2,380.87kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:47+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+[ info ] localhost/qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9 [运行时间：0.437483s][吞吐率：2.29req/s] [内存消耗：2,361.90kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'undefinedcss',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'v' => '5.0.9',
+  'modules' => 'laydate',
+  'default' => 'laydate',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:17:47+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：1.166828s][吞吐率：0.86req/s] [内存消耗：3,160.23kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-05-13T21:17:48+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：1.236590s][吞吐率：0.81req/s] [内存消耗：2,380.09kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:21:10+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.064885s][吞吐率：15.41req/s] [内存消耗：2,380.80kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:21:24+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+[ info ] localhost/qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9 [运行时间：13.567348s][吞吐率：0.07req/s] [内存消耗：2,364.39kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'undefinedcss',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'v' => '5.0.9',
+  'modules' => 'laydate',
+  'default' => 'laydate',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:21:29+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：18.882789s][吞吐率：0.05req/s] [内存消耗：3,241.59kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1]Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: ��֪������������  in C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295
+Stack trace:
+#0 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php(295): PDO->__construct('mysql:host=\\thi...', '', '', Array)
+#1 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php(1006): think\db\Connection->connect()
+#2 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php(348): think\db\Connection->initConnect(false)
+#3 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\connector\Mysql.php(65): think\db\Connection->query('SHOW COLUMNS FR...', Array, false, true)
+#4 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Query.php(1883): think\db\connector\Mysql->getFields('`auth_rule`')
+#5 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Query.php(1931): think\db\Query->getTableInfo('auth_rule', 'type')
+#6 C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Query.[C:\inetpub\wwwroot\qipai\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-05-13T21:21:29+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：5.317031s][吞吐率：0.19req/s] [内存消耗：2,380.03kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:21:30+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/favicon.ico
+[ info ] localhost/qipai/public/admin.php/admin/rule/favicon.ico [运行时间：0.448429s][吞吐率：2.23req/s] [内存消耗：2,361.46kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:21:31+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.444009s][吞吐率：2.25req/s] [内存消耗：2,381.19kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:37+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.050862s][吞吐率：19.66req/s] [内存消耗：2,380.81kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:41+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+[ info ] localhost/qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9 [运行时间：3.476902s][吞吐率：0.29req/s] [内存消耗：2,361.84kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'undefinedcss',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'v' => '5.0.9',
+  'modules' => 'laydate',
+  'default' => 'laydate',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:41+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：3.305726s][吞吐率：0.30req/s] [内存消耗：2,867.77kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009540s ] 
+[ sql ] [ Mongo ] db.auth_rule.find().limit(0); [ RunTime:0.002659s ]
+---------------------------------------------------------------
+[ 2019-05-13T21:22:41+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.058439s][吞吐率：17.11req/s] [内存消耗：2,380.04kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:43+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/favicon.ico
+[ info ] localhost/qipai/public/admin.php/admin/rule/favicon.ico [运行时间：1.493502s][吞吐率：0.67req/s] [内存消耗：2,361.10kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:43+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.045879s][吞吐率：21.80req/s] [内存消耗：2,380.83kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:22:50+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.858949s][吞吐率：1.16req/s] [内存消耗：2,380.81kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:23:00+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+[ info ] localhost/qipai/public/admin.php/admin/rule/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9 [运行时间：10.013453s][吞吐率：0.10req/s] [内存消耗：2,388.64kb] [文件加载：51]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'undefinedcss',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/css,*/*;q=0.1',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'v' => '5.0.9',
+  'modules' => 'laydate',
+  'default' => 'laydate',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [1]Uncaught think\exception\HttpResponseException in C:\inetpub\wwwroot\qipai\thinkphp\library\traits\controller\Jump.php:153
+Stack trace:
+#0 C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php(35): think\Controller->redirect('rule/index')
+#1 [internal function]: app\admin\controller\Rule->_empty()
+#2 C:\inetpub\wwwroot\qipai\thinkphp\library\think\App.php(343): ReflectionMethod->invokeArgs(Object(app\admin\controller\Rule), Array)
+#3 C:\inetpub\wwwroot\qipai\thinkphp\library\think\App.php(606): think\App::invokeMethod(Array, Array)
+#4 C:\inetpub\wwwroot\qipai\thinkphp\library\think\App.php(456): think\App::module(Array, Array, true)
+#5 C:\inetpub\wwwroot\qipai\thinkphp\library\think\App.php(139): think\App::exec(Array, Array)
+#6 C:\inetpub\wwwroot\qipai\thinkphp\start.php(19): think\App::run()
+#7 C:\inetpub\wwwroot\qipai\public\admin.php(17): require('C:\\inetpub\\wwwr...')
+#8 {main}
+  thrown[C:\inetpub\wwwroot\qipai\thinkphp\library\traits\controller\Jump.php:153]
+---------------------------------------------------------------
+[ 2019-05-13T21:23:00+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/getrulejsondata
+[ info ] localhost/qipai/public/admin.php/admin/rule/getrulejsondata [运行时间：10.053581s][吞吐率：0.10req/s] [内存消耗：2,867.77kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'getrulejsondata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->getRuleJsonData[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000020s ] 
+[ sql ] [ Mongo ] db.auth_rule.find().limit(0); [ RunTime:0.000540s ]
+---------------------------------------------------------------
+[ 2019-05-13T21:23:01+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/favicon.ico
+[ info ] localhost/qipai/public/admin.php/admin/rule/favicon.ico [运行时间：0.597116s][吞吐率：1.67req/s] [内存消耗：2,361.10kb] [文件加载：48]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:23:02+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/admin/rule/index
+[ info ] localhost/qipai/public/admin.php/admin/rule/index [运行时间：0.438348s][吞吐率：2.28req/s] [内存消耗：2,381.20kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'referer' => 'http://localhost/qipai/public/admin.php/admin/rule/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Rule->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Rule.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\rule\index.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-13T21:23:26+08:00 ] 0.0.0.0 GET /qipai/public/admin.php/index
+[ info ] localhost/qipai/public/admin.php/index [运行时间：13.855835s][吞吐率：0.07req/s] [内存消耗：1,795.17kb] [文件加载：37]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\inetpub\wwwroot\qipai\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]Can not connect to tcp://127.0.0.1:1238 ����Ŀ�����������ܾ����޷����ӡ�
+[C:\inetpub\wwwroot\qipai\extend\GatewayClient\Gateway.php:1301]
+---------------------------------------------------------------
+[ 2019-05-13T21:26:13+08:00 ] 0.0.0.0 GET /qipai/public/index.php/admin/index/index
+[ info ] localhost/qipai/public/index.php/admin/index/index [运行时间：78.980652s][吞吐率：0.01req/s] [内存消耗：2,809.95kb] [文件加载：49]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=3vm5mgjg1eb2qodqv396f37elj',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007274s ] 
+[ sql ] [ Mongo ] db.admin.find().limit(1); [ RunTime:0.012389s ]

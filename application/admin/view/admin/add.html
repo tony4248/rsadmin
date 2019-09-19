@@ -1,0 +1,97 @@
+{include file="common:meta" /}
+
+<title>添加管理员 - 管理员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="" method="post" class="form form-horizontal form-admin-adds" id="form-admin-add">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="username" name="username">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="password" class="input-text" autocomplete="off" value="" placeholder="密码" id="password" name="password">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="radio-box">
+                        <input name="sex" type="radio" value="0" id="sex-1" checked>
+                        <label for="sex-1">男</label>
+                    </div>
+                    <div class="radio-box">
+                        <input type="radio" id="sex-2" value="1" name="sex">
+                        <label for="sex-2">女</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="mobile" name="mobile">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" placeholder="@" name="email" id="email">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">备注：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <textarea name="note" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" type="button" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+    {include file="common:footer" /}
+    <script>
+        $('#button').click(function() {
+            var formData = $('.form-admin-adds').serialize();
+            $.ajax({
+                url: "{:url('admin/add')}",
+                type: 'post',
+                data: formData,
+                success: function(res) {
+                    if (res.code === 0) {
+                        //失败
+                        layer.msg(res.msg, {
+                            icon: 2
+                        }, 300);
+                        var index = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload(); //刷新父级页面
+                            parent.layer.close(index); //关闭弹出层
+                        }, 2000);
+                    } else {
+                        //成功
+                        layer.msg(res.msg, {
+                            icon: 1
+                        }, 300);
+                        var index1 = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload();
+                            parent.layer.close(index1); //关闭弹出层
+                        }, 2000);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

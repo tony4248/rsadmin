@@ -1,0 +1,166 @@
+{include file="common:meta" /}
+
+<title>扫描二维码 - 充值管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        充值二维码页面
+        <span class="c-gray en">&gt;</span>
+        管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <!--<div class="table-responsive">-->
+                <!--<table class="table table-border table-bordered table-bg">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th scope="col" colspan="9">邮件列表</th>-->
+                    <!--</tr>-->
+                    <!--<tr class="text-c">-->
+                        <!--<th width="10">ID</th>-->
+                        <!--<th width="40">用户id</th>-->
+                        <!--<th width="40">标题</th>-->
+                        <!--<th width="90">内容</th>-->
+                        <!--<th width="100">创建时间</th>-->
+                        <!--<th width="100">领取时间</th>-->
+                        <!--<th width="20">状态</th>-->
+                        <!--<th width="30">操作</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
+
+            <style>
+                body {
+                    text-align: center;
+                }
+                .red {
+                    color: red;
+                    font-size: 18px;
+                    font-weight: 1000;
+                }
+                .t_amount {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+                #qrcode img{
+                    width: 200px;
+                    height: 200px;
+                    margin: auto;
+                }
+                .qr_box {
+                    margin: 10px 20px;
+                    padding: 10px;
+                    border: 1px solid #eee;
+                    color: #c7bc1c;
+                }
+                .pay {
+                    display: block;
+                    width: 100%;
+                    line-height: 36px;
+                    font-weight: 400;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    user-select: none;
+                    border: 1px solid transparent;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    background-color: #198ae3;
+                    border-color: #198ae3;
+                    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                }
+                .pay_btn_box {
+                    margin: 5px 20px;
+                }
+                .tips {
+                    padding: 0 20px;
+                    color: #333;
+                }
+                .header {
+                    padding: 10px;
+                    background: #eff3f7;
+                }
+                .tt_box {
+                    font-size: 16px;
+                }
+            </style>
+            <div class="header">
+                <img src="/static/alipay.png" alt="">
+            </div>
+            <div class="qr_box">
+                <div class="tt_box">转账金额请输入 <span class="t_amount red">{$amount}</span> 元</div>
+                <div id="qrcode">
+                    <img id="qrcode_load" style="display: block;">
+                </div>
+            </div>
+            <!--<div class="tips">扫码后输入的金额，必须是（<span class="red">二维码</span>）上方显示的数字（<span class="red">{$amount}</span>）否则无法到账！</div>-->
+            <div class="tips">扫码后输入的金额，<span class="red">请误修改金额</span>,否则无法到账！</div>
+            <div class="pay_btn_box">
+                <button class="pay">立即支付</button>
+            </div>
+            <div>{$end_time} 后过期，过期后请勿支付！</div>
+            <div>重复扫码不到账，请只支付一次</div>
+            <div>订单号：<u>{$trade_no}</u></div>
+
+            <script type="text/javascript" src="/static/js/qrcode.js"></script>
+            <script>
+                var alipayQRUrl = "{$qrcode}";
+                $('#qrcode').empty();
+                var qrcode = new QRCode('qrcode', {
+                    text: alipayQRUrl,
+                    width: 256,
+                    height: 256,
+                    colorDark: '#000000',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                $('.pay').click(function () {
+                    pay(alipayQRUrl);
+                });
+                function pay(url) {
+                    window.location.href = alipayQRUrl;
+                }
+
+                var checkStatus = function() {
+                    $.getJSON('/api/Order/status', {order_id: {$order_id}}).then(function(res) {
+                        if (res.err) {
+                            return;
+                        }
+                        if (res.status) {
+                            alert('充值成功');
+                            location.href="{$success_url}";
+                            return;
+                        }
+                        if (!res.status) {
+                            setTimeout(checkStatus, 2000);
+                        }
+                    });
+                }
+                checkStatus();
+            </script>
+        </article>
+    </div>
+</section>
+{include file="common:footer" /}
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

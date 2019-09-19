@@ -1,0 +1,133 @@
+{include file="common:meta" /}
+
+<title>账号管理 - 代理列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        账号管理
+        <span class="c-gray en">&gt;</span>
+        代理列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="11">代理列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th>开线人</th>
+                    <th>代理账号</th>
+                    <th>昵称</th>
+                    <th>下线数量</th>
+                    <th>余额</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr class="text-c">
+                    <td>{$Request.session.agent_info.nickname}</td>
+                    <td>{$Request.session.agent_info.username}</td>
+                    <td>{$vo.nickname}</td>
+                    <td>0</td>
+                    <td>{$vo.coin}</td>
+                    <td>{$vo.status}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <a href="javascript:;" onClick="member_edit('编辑','/admin.php/dest/account_num/edit?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                        <a href="javascript:;" onClick="member_charge('充值','/admin.php/dest/account_num/charge?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">充值</a>
+                        <a href="javascript:;" onClick="member_qukuan('取款','/admin.php/dest/account_num/qukuan?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">取款</a>
+                        <a href="javascript:;" onClick="member_mima('密码','/admin.php/dest/account_num/mima?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">密码</a>
+                        <a href="javascript:;" onclick="del_agent({$vo.id},{$vo.agent})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a>
+
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    /*添加*/
+    function admin_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    /*删除*/
+    function member_del(id){
+        $.post("{:url('IpWhitelist/segment_delete')}",{'id':id},function (res) {
+            if(res.code===0){
+                layer.msg(res.msg,{icon:2});
+            }else{
+                layer.msg(res.msg,{icon:1});
+                setTimeout(function () {window.location.reload()},1000)
+            }
+        })
+    }
+
+    /*用户-编辑*/
+    function member_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*卡号-编辑*/
+    function member_charge(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function member_qukuan(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function zhuanYi(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    function member_mima(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    function del_agent(id,aid){
+        layer.confirm('确定要删除用户吗？', {
+            btn: ['确定','再想想'] //按钮
+        }, function(){
+            $.ajax({
+                url:"{:url('agent/del')}",
+                type:'post',
+                data:{id:id,aid:aid},
+                success:function (res) {
+                    if(res.code === 0){
+                        layer.msg(res.msg);
+                    }else{
+                        layer.msg(res.msg);
+                        setTimeout(function(){
+                            parent.location.reload();
+                        }, 1000);
+                    }
+                }
+            });
+        })
+    }
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

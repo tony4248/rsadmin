@@ -1,0 +1,48 @@
+{include file="common:meta" /}
+
+<title>订单记录 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+            <tr class="text-c">
+                <th width="50">订单Id</th>
+                <th width="20">订单类型</th>
+                <th width="20">产品类型</th>
+                <th width="20">产品名称</th>
+                <th width="20">数量</th>
+                <th width="20">金额</th>
+                <th width="20">状态</th>
+                <th width="20">支付方式</th>
+                <th width="20">支付账号</th>
+                <th width="20">时间</th>
+            </tr>
+            {volist name="data" id="vo"}
+            <tr class="text-c">
+                <td id="id1">{$vo.id}</td>
+                <td>{if condition="$vo.type eq 'VIPRECHARGE'"}VIP充值{elseif condition="$vo.type eq 'RECHARGE'"/}充值{elseif condition="$vo.type eq 'WITHDRAW'"/}提现{else /}未知{/if}</td>
+                <td>{if condition="$vo.prodType eq 'CARD'"}钻石{elseif condition="$vo.prodType eq 'COIN'"/}金币{elseif condition="$vo.prodType eq 'PROPS'"/}道具{elseif condition="$vo.prodType eq 'COMMODITY'"/}实物{else /}未知{/if}</td>
+                <td>{$vo.prodName}</td>
+                <td>{$vo.qty}</td>
+                <td>{$vo.amount}</td>
+                <td>{if condition="$vo.state eq 'PENDING'"}待审批{elseif condition="$vo.state eq 'APPROVED'"/}已批准{elseif condition="$vo.state eq 'PROCESSED'"/}已处理{else /}未知{/if}</td>
+                <td>{$vo.paymentType}</td>
+                <td>{$vo.paymentId}</td>
+                <td>{$vo.createTime}</td>
+            </tr>
+            {/volist}
+        </table>
+    </div>
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

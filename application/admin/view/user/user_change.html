@@ -1,0 +1,41 @@
+{include file="common:meta" /}
+
+<title>修改密码 - 会员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="{:url('user/user_change')}" method="post" class="form form-horizontal">
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账户：</label>
+                <div class="formControls col-xs-8 col-sm-9"> {$data.name} </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新密码：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="password" class="input-text" autocomplete="off" name="newpassword" value="">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="password" class="input-text" autocomplete="off" name="password" id="password">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;保存&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+    {load href="__STATIC__/admin/lib/jquery/1.9.1/jquery.min.js"} {load href="__STATIC__/admin/lib/layer/2.4/layer.js"} {load href="__STATIC__/admin/static/h-ui/js/H-ui.js"} {load href="__STATIC__/admin/static/h-ui.admin/js/H-ui.admin.page.js"} {load href="http://code.jquery.com/ui/1.12.1/jquery-ui.js"}
+    {load href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"} {load href="__STATIC__/admin/static/laydate/laydate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"}
+    {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

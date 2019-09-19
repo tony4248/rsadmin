@@ -1,0 +1,2430 @@
+---------------------------------------------------------------
+[ 2019-06-03T07:43:00+08:00 ] 0.0.0.0 GET /admin.php/admin/user/user_list
+[ info ] localhost/admin.php/admin/user/user_list [运行时间：1.169366s][吞吐率：0.86req/s] [内存消耗：2,214.47kb] [文件加载：45]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'host' => 'localhost',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:04+08:00 ] 0.0.0.0 GET /admin.php/admin/login/index
+[ info ] localhost/admin.php/admin/login/index [运行时间：0.487562s][吞吐率：2.05req/s] [内存消耗：1,957.37kb] [文件加载：43]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/user/user_list',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:05+08:00 ] 0.0.0.0 GET /admin.php/captcha
+[ info ] localhost/admin.php/captcha [运行时间：0.521447s][吞吐率：1.92req/s] [内存消耗：1,574.98kb] [文件加载：35]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ C:\inetpub\wwwroot\qipai\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:11+08:00 ] 0.0.0.0 POST /admin.php/admin/login/dologin
+[ info ] localhost/admin.php/admin/login/dologin [运行时间：0.661275s][吞吐率：1.51req/s] [内存消耗：2,768.45kb] [文件加载：49]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '40',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'mdml',
+)
+[ info ] [ RUN ] app\admin\controller\Login->doLogin[ C:\inetpub\wwwroot\qipai\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008581s ] 
+[ sql ] [ Mongo ] db.admin.find({"$and":[{"username":"admin"}]}).limit(1); [ RunTime:0.008317s ]
+[ sql ] [ Mongo ] db.admin_login_log.insert({"admin_id":"930612","ip":"0.0.0.0","create_time":"2019-06-03 07:43:11"}); [ RunTime:0.045916s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:15+08:00 ] 0.0.0.0 GET /admin.php/admin/index/index
+[ info ] localhost/admin.php/admin/index/index [运行时间：0.976084s][吞吐率：1.02req/s] [内存消耗：2,403.40kb] [文件加载：49]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/login/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ error ] [0]类型错误: Too few arguments to function think\mongo\Connection::query(), 1 passed and at least 2 expected[C:\inetpub\wwwroot\qipai\vendor\topthink\think-mongo\src\Connection.php:273]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:40+08:00 ] 0.0.0.0 GET /admin.php/admin/user/user_list
+[ info ] localhost/admin.php/admin/user/user_list [运行时间：0.576522s][吞吐率：1.73req/s] [内存消耗：3,459.88kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->user_list[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\user_list.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000018s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"HUMAN"}]},"limit":0}); [ RunTime:0.001424s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"HUMAN"}]}).limit(15); [ RunTime:0.000520s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"976564"}]}).limit(1); [ RunTime:0.000633s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"588514"}]}).limit(1); [ RunTime:0.000453s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:41+08:00 ] 0.0.0.0 GET /admin.php/admin/user/favicon.ico
+[ info ] localhost/admin.php/admin/user/favicon.ico [运行时间：0.451753s][吞吐率：2.21req/s] [内存消耗：2,569.32kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/user/user_list',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:42+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.560405s][吞吐率：1.78req/s] [内存消耗：3,640.94kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/user/user_list',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000017s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.001574s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000389s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000493s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000816s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000419s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000408s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000336s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000352s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000425s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000392s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000406s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000379s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000493s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000353s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000386s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000357s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000295s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000300s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000233s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000308s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000358s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:43+08:00 ] 0.0.0.0 GET /admin.php/admin/admin/index
+[ info ] localhost/admin.php/admin/admin/index [运行时间：0.530548s][吞吐率：1.88req/s] [内存消耗：3,070.82kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/user/user_list',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Admin->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Admin.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\admin\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ] db.count({"count":"admin","query":[],"limit":0}); [ RunTime:0.000381s ]
+[ sql ] [ Mongo ] db.admin.find().limit(15); [ RunTime:0.000321s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:45+08:00 ] 0.0.0.0 GET /admin.php/admin/admin/favicon.ico
+[ info ] localhost/admin.php/admin/admin/favicon.ico [运行时间：0.436273s][吞吐率：2.29req/s] [内存消耗：2,358.30kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/admin/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Admin->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Admin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:46+08:00 ] 0.0.0.0 GET /admin.php/admin/admin/index
+[ info ] localhost/admin.php/admin/admin/index [运行时间：0.445195s][吞吐率：2.25req/s] [内存消耗：3,070.27kb] [文件加载：55]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/admin/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Admin->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Admin.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\admin\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ] db.count({"count":"admin","query":[],"limit":0}); [ RunTime:0.000438s ]
+[ sql ] [ Mongo ] db.admin.find().limit(15); [ RunTime:0.000302s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:48+08:00 ] 0.0.0.0 GET /admin.php/admin/admin/add
+[ info ] localhost/admin.php/admin/admin/add [运行时间：0.451387s][吞吐率：2.22req/s] [内存消耗：2,356.69kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/admin/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Admin->add[ C:\inetpub\wwwroot\qipai\application\admin\controller\Admin.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\admin\add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:51+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：0.551389s][吞吐率：1.81req/s] [内存消耗：3,473.16kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/admin/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000017s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.000797s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000664s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000523s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000453s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000398s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000422s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000460s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000465s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000446s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000420s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000438s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000401s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:52+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.439662s][吞吐率：2.27req/s] [内存消耗：2,559.20kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:43:53+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.518523s][吞吐率：1.93req/s] [内存消耗：3,640.94kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000021s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000591s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000528s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000466s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000505s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.001197s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000588s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000533s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000420s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.005765s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.004508s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.003631s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.003928s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.001738s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.002888s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.002226s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.001198s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.002945s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.001056s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.004955s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000654s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000413s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000486s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:43:54+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_add
+[ info ] localhost/admin.php/admin/robot/user_add [运行时间：0.463261s][吞吐率：2.16req/s] [内存消耗：2,553.27kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:44:00+08:00 ] 0.0.0.0 POST /admin.php/admin/robot/user_add_save
+[ info ] localhost/admin.php/admin/robot/user_add_save [运行时间：0.475977s][吞吐率：2.10req/s] [内存消耗：3,170.18kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add_save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '35',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_add',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'password' => '',
+  'nickName' => 'v',
+  'name' => '',
+  'locked' => '0',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add_save[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'menu_tree',
+  1 => 'code',
+  2 => 'msg',
+  3 => 'data',
+  4 => 'url',
+  5 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004936s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.006651s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"name":""}]}).limit(1); [ RunTime:0.001315s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:44:05+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_add
+[ info ] localhost/admin.php/admin/robot/user_add [运行时间：0.439431s][吞吐率：2.28req/s] [内存消耗：2,552.59kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:44:29+08:00 ] 0.0.0.0 POST /admin.php/admin/robot/user_add_save
+[ info ] localhost/admin.php/admin/robot/user_add_save [运行时间：0.900447s][吞吐率：1.11req/s] [内存消耗：3,221.84kb] [文件加载：54]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add_save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '61',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_add',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'password' => '',
+  'nickName' => 'v神仙',
+  'name' => 'vtaslink',
+  'locked' => '0',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add_save[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000019s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.000823s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"name":"vtaslink"}]}).limit(1); [ RunTime:0.000731s ]
+[ error ] [8]未定义变量: allAvatars[C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php:1073]
+---------------------------------------------------------------
+[ 2019-06-03T07:48:03+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_add
+[ info ] localhost/admin.php/admin/robot/user_add [运行时间：1.015687s][吞吐率：0.98req/s] [内存消耗：2,556.05kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:48:10+08:00 ] 0.0.0.0 POST /admin.php/admin/robot/user_add_save
+[ info ] localhost/admin.php/admin/robot/user_add_save [运行时间：0.565772s][吞吐率：1.77req/s] [内存消耗：3,183.31kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add_save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '52',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_add',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'password' => '',
+  'nickName' => 'v神',
+  'name' => 'vtaslink',
+  'locked' => '0',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add_save[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'menu_tree',
+  1 => 'code',
+  2 => 'msg',
+  3 => 'data',
+  4 => 'url',
+  5 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000015s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.001032s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"name":"vtaslink"}]}).limit(1); [ RunTime:0.000481s ]
+[ sql ] [ Mongo ] db.users.db.users.find({"$and":[{"name":"vtaslink"}]}).limit(1); [ RunTime:0.000640s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:48:15+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_add
+[ info ] localhost/admin.php/admin/robot/user_add [运行时间：0.441311s][吞吐率：2.27req/s] [内存消耗：2,556.05kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_add_save',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_add[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_add.html [ array (
+  0 => 'menu_tree',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:48:18+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：0.572202s][吞吐率：1.75req/s] [内存消耗：3,479.05kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.000743s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000315s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000429s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000266s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000197s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000253s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000248s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000308s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000392s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000386s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000518s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000301s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000269s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:48:20+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.456016s][吞吐率：2.19req/s] [内存消耗：2,562.66kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:48:21+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.580952s][吞吐率：1.72req/s] [内存消耗：3,644.40kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000013s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000387s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000300s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000363s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000357s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000202s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000238s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000206s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000293s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000401s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000302s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000344s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000213s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000202s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000195s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000243s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000215s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000209s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000338s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000236s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000207s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000185s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000221s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:48:22+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/edit?id=138148
+[ info ] localhost/admin.php/admin/robot/edit?id=138148 [运行时间：0.479970s][吞吐率：2.08req/s] [内存消耗：3,242.38kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '138148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->edit[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\edit.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000016s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.000917s ]
+---------------------------------------------------------------
+[ 2019-06-03T07:48:51+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_charge?id=664747
+[ info ] localhost/admin.php/admin/robot/user_charge?id=664747 [运行时间：1.066385s][吞吐率：0.94req/s] [内存消耗：2,557.70kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_charge',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '664747',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_charge[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_charge.html [ array (
+  0 => 'menu_tree',
+  1 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T07:48:54+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/edit?id=664747
+[ info ] localhost/admin.php/admin/robot/edit?id=664747 [运行时间：0.561500s][吞吐率：1.78req/s] [内存消耗：3,242.32kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '664747',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->edit[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\edit.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.000551s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:23+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：1.200731s][吞吐率：0.83req/s] [内存消耗：3,479.73kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006024s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.004141s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000407s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000605s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000353s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000275s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000295s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000263s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000624s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000573s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000431s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000302s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000265s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000251s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:24+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.459010s][吞吐率：2.18req/s] [内存消耗：2,562.66kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:43:25+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.587124s][吞吐率：1.70req/s] [内存消耗：3,644.40kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000015s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000682s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000377s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000632s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000622s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000402s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000413s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000422s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000393s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000463s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000326s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000326s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000298s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000306s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000280s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000299s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000378s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000357s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000377s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000289s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000312s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000319s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000306s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:29+08:00 ] 0.0.0.0 GET /admin.php/admin/shop/order_records?userId=165114
+[ info ] localhost/admin.php/admin/shop/order_records?userId=165114 [运行时间：0.483844s][吞吐率：2.07req/s] [内存消耗：3,037.94kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'shop',
+    2 => 'order_records',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'userId' => '165114',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Shop->order_records[ C:\inetpub\wwwroot\qipai\application\admin\controller\Shop.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\shop\order_records.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000012s ] 
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000538s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:35+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_charge?id=138148
+[ info ] localhost/admin.php/admin/robot/user_charge?id=138148 [运行时间：0.447792s][吞吐率：2.23req/s] [内存消耗：2,557.70kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_charge',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '138148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_charge[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_charge.html [ array (
+  0 => 'menu_tree',
+  1 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:43:43+08:00 ] 0.0.0.0 POST /admin.php/admin/user/user_rechargesave
+[ info ] localhost/admin.php/admin/user/user_rechargesave [运行时间：0.464288s][吞吐率：2.15req/s] [内存消耗：3,266.84kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_rechargesave',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '50',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_charge?id=138148',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '138148',
+  'addCardNum' => '200',
+  'addScore' => '3000',
+  'minusScore' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->user_rechargeSave[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000013s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.000872s ]
+[ sql ] [ Mongo ]  [ RunTime:0.000886s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000436s ]
+[ sql ] [ Mongo ] db.orders.insert({"userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}); [ RunTime:0.007299s ]
+[ sql ] [ Mongo ] db.users.db.orders.insert({"userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}); [ RunTime:0.000436s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.insert({"userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}); [ RunTime:0.000400s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000362s ]
+[ sql ] [ Mongo ] db.orders.update({"$and":[{"userId":"138148"}]},{"$set":{"_id":"5cf46d3f3801782174005bb2","userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114},{"id":"I2019060308434384","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}}); [ RunTime:0.000521s ]
+[ sql ] [ Mongo ] db.users.db.orders.update({"$and":[{"userId":"138148"}]},{"$set":{"_id":"5cf46d3f3801782174005bb2","userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114},{"id":"I2019060308434384","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}}); [ RunTime:0.000272s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.update({"$and":[{"userId":"138148"}]},{"$set":{"_id":"5cf46d3f3801782174005bb2","userId":"138148","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308434348","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":200,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114},{"id":"I2019060308434384","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522623114}]}}); [ RunTime:0.000418s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:45+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：0.452365s][吞吐率：2.21req/s] [内存消耗：3,479.20kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000023s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.000629s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000484s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000501s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000580s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000556s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000392s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000317s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000435s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000584s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000370s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000544s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000412s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000347s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:47+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.456573s][吞吐率：2.19req/s] [内存消耗：2,562.66kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:43:48+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.479276s][吞吐率：2.09req/s] [内存消耗：3,644.40kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000508s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000405s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000419s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000359s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000324s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000404s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000437s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000447s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000334s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000312s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000314s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000317s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000316s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000376s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000300s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000359s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000582s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000477s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000456s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000373s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000359s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:51+08:00 ] 0.0.0.0 GET /admin.php/admin/shop/order_records?userId=138148
+[ info ] localhost/admin.php/admin/shop/order_records?userId=138148 [运行时间：0.445334s][吞吐率：2.25req/s] [内存消耗：3,037.94kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'shop',
+    2 => 'order_records',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'userId' => '138148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Shop->order_records[ C:\inetpub\wwwroot\qipai\application\admin\controller\Shop.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\shop\order_records.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000012s ] 
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000469s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:43:55+08:00 ] 0.0.0.0 GET /admin.php/admin/shop/order_records?userId=138148
+[ info ] localhost/admin.php/admin/shop/order_records?userId=138148 [运行时间：0.449876s][吞吐率：2.22req/s] [内存消耗：3,037.94kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'shop',
+    2 => 'order_records',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'userId' => '138148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Shop->order_records[ C:\inetpub\wwwroot\qipai\application\admin\controller\Shop.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\shop\order_records.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000017s ] 
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000476s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:03+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_charge?id=746065
+[ info ] localhost/admin.php/admin/robot/user_charge?id=746065 [运行时间：0.439810s][吞吐率：2.27req/s] [内存消耗：2,557.70kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_charge',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '746065',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_charge[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_charge.html [ array (
+  0 => 'menu_tree',
+  1 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:44:09+08:00 ] 0.0.0.0 POST /admin.php/admin/user/user_rechargesave
+[ info ] localhost/admin.php/admin/user/user_rechargesave [运行时间：0.456686s][吞吐率：2.19req/s] [内存消耗：3,266.84kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_rechargesave',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '52',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_charge?id=746065',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '746065',
+  'addCardNum' => '3098',
+  'addScore' => '10000',
+  'minusScore' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->user_rechargeSave[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000014s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.000553s ]
+[ sql ] [ Mongo ]  [ RunTime:0.000548s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000479s ]
+[ sql ] [ Mongo ] db.orders.insert({"userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}); [ RunTime:0.000310s ]
+[ sql ] [ Mongo ] db.users.db.orders.insert({"userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}); [ RunTime:0.000294s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.insert({"userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}); [ RunTime:0.000427s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000482s ]
+[ sql ] [ Mongo ] db.orders.update({"$and":[{"userId":"746065"}]},{"$set":{"_id":"5cf46d593801782174005bb3","userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189},{"id":"I2019060308440966","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":10000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}}); [ RunTime:0.000780s ]
+[ sql ] [ Mongo ] db.users.db.orders.update({"$and":[{"userId":"746065"}]},{"$set":{"_id":"5cf46d593801782174005bb3","userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189},{"id":"I2019060308440966","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":10000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}}); [ RunTime:0.000331s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.update({"$and":[{"userId":"746065"}]},{"$set":{"_id":"5cf46d593801782174005bb3","userId":"746065","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308440920","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":3098,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189},{"id":"I2019060308440966","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":10000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522649189}]}}); [ RunTime:0.002070s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:11+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：0.452369s][吞吐率：2.21req/s] [内存消耗：3,479.26kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000011s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.000695s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000615s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000485s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000305s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000361s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000411s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000415s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000387s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000341s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000326s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000424s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000333s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000459s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:13+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.453199s][吞吐率：2.21req/s] [内存消耗：2,562.66kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:44:14+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.469807s][吞吐率：2.13req/s] [内存消耗：3,644.40kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000022s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000402s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000264s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000400s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000373s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000344s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000314s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000476s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000383s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000398s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000281s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000295s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000278s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000318s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000282s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000216s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000289s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000269s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000492s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000484s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000469s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000255s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:15+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/user_charge?id=664747
+[ info ] localhost/admin.php/admin/robot/user_charge?id=664747 [运行时间：0.807764s][吞吐率：1.24req/s] [内存消耗：2,558.38kb] [文件加载：46]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'user_charge',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '664747',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->user_charge[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\user_charge.html [ array (
+  0 => 'menu_tree',
+  1 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:44:26+08:00 ] 0.0.0.0 POST /admin.php/admin/user/user_rechargesave
+[ info ] localhost/admin.php/admin/user/user_rechargesave [运行时间：0.455244s][吞吐率：2.20req/s] [内存消耗：3,266.84kb] [文件加载：53]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'user_rechargesave',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '52',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/user_charge?id=664747',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '664747',
+  'addCardNum' => '8800',
+  'addScore' => '12000',
+  'minusScore' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->user_rechargeSave[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004838s ] 
+[ sql ] [ Mongo ]  [ RunTime:0.003627s ]
+[ sql ] [ Mongo ]  [ RunTime:0.000709s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000372s ]
+[ sql ] [ Mongo ] db.orders.insert({"userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}); [ RunTime:0.000338s ]
+[ sql ] [ Mongo ] db.users.db.orders.insert({"userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}); [ RunTime:0.000320s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.insert({"userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}); [ RunTime:0.000397s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000325s ]
+[ sql ] [ Mongo ] db.orders.update({"$and":[{"userId":"664747"}]},{"$set":{"_id":"5cf46d6a3801785bec0072f2","userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486},{"id":"I2019060308442688","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":12000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}}); [ RunTime:0.000378s ]
+[ sql ] [ Mongo ] db.users.db.orders.update({"$and":[{"userId":"664747"}]},{"$set":{"_id":"5cf46d6a3801785bec0072f2","userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486},{"id":"I2019060308442688","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":12000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}}); [ RunTime:0.000406s ]
+[ sql ] [ Mongo ] db.users.db.users.db.orders.update({"$and":[{"userId":"664747"}]},{"$set":{"_id":"5cf46d6a3801785bec0072f2","userId":"664747","balance":0,"rechargeSum":0,"withdrawSum":0,"orders":[{"id":"I2019060308442689","type":"RECHARGE","prodType":"CARD","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":8800,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486},{"id":"I2019060308442688","type":"RECHARGE","prodType":"COIN","prodName":"\u624b\u5de5\u64cd\u4f5c","qty":1,"amount":12000,"state":"PROCESSED","paymentType":"","paymentId":"","createTime":1559522666486}]}}); [ RunTime:0.000368s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:29+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/index
+[ info ] localhost/admin.php/admin/robot/index [运行时间：0.462231s][吞吐率：2.16req/s] [内存消耗：3,479.32kb] [文件加载：56]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\robot\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000011s ] 
+[ sql ] [ Mongo ] db.count({"count":"users","query":{"$and":[{"type":"AI"}]},"limit":0}); [ RunTime:0.000866s ]
+[ sql ] [ Mongo ] db.users.find({"$and":[{"type":"AI"}]}).limit(15); [ RunTime:0.000564s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"272367"}]}).limit(1); [ RunTime:0.000658s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"165114"}]}).limit(1); [ RunTime:0.000474s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"993427"}]}).limit(1); [ RunTime:0.000331s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"759546"}]}).limit(1); [ RunTime:0.000352s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"232699"}]}).limit(1); [ RunTime:0.000374s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"433903"}]}).limit(1); [ RunTime:0.000364s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"457676"}]}).limit(1); [ RunTime:0.000551s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"106547"}]}).limit(1); [ RunTime:0.000489s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"746065"}]}).limit(1); [ RunTime:0.000682s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000545s ]
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000342s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:44:30+08:00 ] 0.0.0.0 GET /admin.php/admin/robot/favicon.ico
+[ info ] localhost/admin.php/admin/robot/favicon.ico [运行时间：0.462479s][吞吐率：2.16req/s] [内存消耗：2,562.66kb] [文件加载：47]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'robot',
+    2 => 'favicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Robot->_empty[ C:\inetpub\wwwroot\qipai\application\admin\controller\Robot.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-06-03T08:44:31+08:00 ] 0.0.0.0 GET /admin.php/admin/user/index
+[ info ] localhost/admin.php/admin/user/index [运行时间：0.451379s][吞吐率：2.22req/s] [内存消耗：3,644.40kb] [文件加载：57]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\inetpub\wwwroot\qipai\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\user\index.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+  2 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000011s ] 
+[ sql ] [ Mongo ] db.count({"count":"agents","query":{"$and":[{"uid":{"$ne":""}}]},"limit":0}); [ RunTime:0.000615s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000328s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":{"$ne":""}}]}).limit(15); [ RunTime:0.000418s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000408s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"305921"}]},"limit":0}); [ RunTime:0.000333s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"305921"}]}).limit(0); [ RunTime:0.000339s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"463859"}]}).limit(1); [ RunTime:0.000333s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"596738"}]}).limit(1); [ RunTime:0.000377s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000317s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000360s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000339s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"463859"}]},"limit":0}); [ RunTime:0.000294s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"463859"}]}).limit(0); [ RunTime:0.000428s ]
+[ sql ] [ Mongo ] db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000346s ]
+[ sql ] [ Mongo ] db.users.db.agents.find({"$and":[{"uid":"345607"}]}).limit(1); [ RunTime:0.000349s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000319s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"596738"}]},"limit":0}); [ RunTime:0.000354s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000360s ]
+[ sql ] [ Mongo ] db.users.db.agentrels.find({"$and":[{"pid":"596738"}]}).limit(0); [ RunTime:0.000467s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"},{"agentLevel":1}]},"limit":0}); [ RunTime:0.000430s ]
+[ sql ] [ Mongo ] db.count({"count":"agentrels","query":{"$and":[{"pid":"345607"}]},"limit":0}); [ RunTime:0.000536s ]
+[ sql ] [ Mongo ] db.agentrels.find({"$and":[{"pid":"345607"}]}).limit(0); [ RunTime:0.000410s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:45:11+08:00 ] 0.0.0.0 GET /admin.php/admin/shop/order_records?userId=138148
+[ info ] localhost/admin.php/admin/shop/order_records?userId=138148 [运行时间：0.466219s][吞吐率：2.14req/s] [内存消耗：3,037.94kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'shop',
+    2 => 'order_records',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'userId' => '138148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Shop->order_records[ C:\inetpub\wwwroot\qipai\application\admin\controller\Shop.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\shop\order_records.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000011s ] 
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"138148"}]}).limit(1); [ RunTime:0.000740s ]
+---------------------------------------------------------------
+[ 2019-06-03T08:45:24+08:00 ] 0.0.0.0 GET /admin.php/admin/shop/order_records?userId=664747
+[ info ] localhost/admin.php/admin/shop/order_records?userId=664747 [运行时间：0.442042s][吞吐率：2.26req/s] [内存消耗：3,037.94kb] [文件加载：52]
+[ info ] [ LANG ] C:\inetpub\wwwroot\qipai\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'shop',
+    2 => 'order_records',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'referer' => 'http://localhost/admin.php/admin/robot/index',
+  'host' => 'localhost',
+  'cookie' => 'PHPSESSID=98jc8grs222hoed7ic4k10d3ve',
+  'accept-language' => 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'userId' => '664747',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Shop->order_records[ C:\inetpub\wwwroot\qipai\application\admin\controller\Shop.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ VIEW ] C:\inetpub\wwwroot\qipai\public/../application/admin\view\shop\order_records.html [ array (
+  0 => 'menu_tree',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000013s ] 
+[ sql ] [ Mongo ] db.orders.find({"$and":[{"userId":"664747"}]}).limit(1); [ RunTime:0.000744s ]

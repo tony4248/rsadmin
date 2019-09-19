@@ -1,0 +1,102 @@
+{include file="common:meta" /}
+
+<title>管理员列表 - 管理员列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+            <span class="c-gray en">&gt;</span> 用户管理
+            <span class="c-gray en">&gt;</span> 登录日志 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <table class="table table-border table-bordered table-bg">
+                    <form class="form-inline" role="form" method="get" action="{:url('admin/loginlog')}">
+                        <div class="form-group">
+                            <span style="color: red;">日志查询</span> 账号:<input style="width: 120px;" type="text" class="input-text" name="userId" placeholder="请输入账号" value="{$userId ? $userId : '';}">
+                        </div>
+                        <button type="submit" class="btn btn-default">查询</button>
+                    </form>
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="9">登陆日志</th>
+                        </tr>
+                        <tr class="text-c">
+                            <th width="40">管理员ID</th>
+                            <th width="90">登录IP</th>
+                            <th width="90">登陆时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.admin_id}</td>
+                            <td>{$vo.ip}</td>
+                            <td>{$vo.create_time}</td>
+                        </tr>
+                        {/volist}
+                    </tbody>
+
+                </table>
+                <div style="float: right;">
+                    {$page}
+                </div>
+                {$quick ?? ''}
+            </article>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+    <script>
+        $('#clearAdminLog').click(function() {
+            $.ajax({
+                type: 'post',
+                url: "{:url('admin/clearAdminLog')}",
+                success: function(res) {
+                    if (res.code === 0) {
+                        //失败
+                        layer.msg(res.msg, {
+                            icon: 2
+                        }, 5000);
+                        //                    var index = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            window.location.reload(); //刷新页面
+                        }, 5000);
+                    } else {
+                        //成功
+                        layer.msg(res.msg, {
+                            icon: 1
+                        }, 5000);
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 3000);
+                    }
+                }
+            })
+        });
+
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+</body>
+
+</html>

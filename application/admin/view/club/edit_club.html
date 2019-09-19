@@ -1,0 +1,85 @@
+{include file="common:meta" /}
+
+<title>编辑俱乐部 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="{:url('club/edit_club')}" method="post" class="form form-horizontal">
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">名称：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.name}" autoComplete="off" placeholder="" id="name" name="name">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">描述：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.description}" autoComplete="off" placeholder="" id="description" name="description">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">拥有者：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.ownerId}" placeholder="" id="ownerId" name="ownerId">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">玩法：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.gameType}" placeholder="" id="gameType" name="gameType">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">收费标准：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.feeRate}" placeholder="" id="feeRate" name="feeRate">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">级别：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.level}" placeholder="" id="level" name="level">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">会员容量：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.membersCapacity}" name="membersCapacity" id="membersCapacity">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">管理员容量：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.adminsCapacity}" name="adminsCapacity" id="adminsCapacity">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">状态：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="radio-box">
+                        <input name="state" type="radio" value="ACTIVE" {if condition="$data.state eq 'ACTIVE'" } checked {/if}>
+                        <label for="sex-1">有效</label>
+                    </div>
+                    <div class="radio-box">
+                        <input name="state" type="radio" value="DISABLED" {if condition="$data.state eq 'DISABLED'" } checked {/if}>
+                        <label for="sex-2">失效</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <button class="btn btn-primary radius" value="&nbsp;&nbsp;修改&nbsp;&nbsp;">修改</button>
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+
+</body>
+
+</html>

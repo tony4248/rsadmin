@@ -1,0 +1,52 @@
+{include file="common:meta" /}
+
+<title>添加邮件 - 邮件管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="{:url('email/add')}" method="post" class="form form-horizontal form-email-add">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>收件人ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$receiver}" placeholder="收件人的ID,发给系统用ID:000001,广播消息用ID:999999" id="receiver" name="receiver">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">发件人ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="收件人的ID,如果留空,则使用系统ID:000001" id="sender" name="sender">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="title" name="title">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>内容：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <textarea name="content" class="textarea radius"></textarea>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" type="submit" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

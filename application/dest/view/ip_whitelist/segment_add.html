@@ -1,0 +1,50 @@
+{include file="common:meta" /}
+
+<title>IP段添加 - 运营管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+<article class="cl pd-20">
+    <form action="" method="post" class="form form-horizontal form-group-adds" id="form-admin-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>禁用IP：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" placeholder="IP开始" style="width: 200px;" name="ip_start">
+               - <input type="text" class="input-text" placeholder="IP结束" style="width: 200px;"  name="ip_end">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="button" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+{include file="common:footer" /}
+<script>
+    $('#button').click(function () {
+        var formData  = $('.form-group-adds').serialize();
+        $.ajax({
+            url:"{:url('IpWhitelist/segment_save')}",
+            type:'post',
+            data:formData,
+            success:function (res) {
+                if(res.code === 0 ){
+                    //失败
+                    layer.msg(res.msg,{icon:2},300);
+                }else{
+                    //成功
+                    layer.msg(res.msg,{icon:1},300);
+                    var index1 = parent.layer.getFrameIndex(window.name);
+                    setTimeout(function(){
+                        parent.location.reload();
+                        parent.layer.close(index1);//关闭弹出层
+                    }, 1000);
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

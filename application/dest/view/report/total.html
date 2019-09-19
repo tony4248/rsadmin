@@ -1,0 +1,103 @@
+{include file="common:meta" /}
+
+<title>报表管理 - 统计 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/admin/layui/dist/css/layui.css"}
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        报表管理
+        <span class="c-gray en">&gt;</span>
+        统计列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+            <form class="form-inline" role="form" method="get" action="{:url('report/total')}">
+                <div class="form-group">
+                    <span style="color: red;">代理用户查询</span> <input style="width: 120px;" type="text" class="input-text" name="nickname" placeholder="请输入昵称" value="{$nickname ? $nickname : '';}">
+                    <input style="width: 120px;" type="text" class="input-text" name="game_name" placeholder="游戏名" value="{$game_name ? $game_name : '';}">
+                    <input style="width: 120px;" type="text" class="input-text" name="action_name" placeholder="操作名" value="{$action_name ? $action_name : '';}">
+                    <input type="text" class="input-text" style="width: 100px;" placeholder="开始时间" autocomplete="off" name="startTime" id="test3"> - <input type="text" name="endTime" id="test4" style="width: 100px;" placeholder="结束时间" class="input-text" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-secondary-outline radius">查询</button>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="7">统计列表</th>
+                        <th colspan="2" style="border-left-color: #f5fafe">
+                            <span style="font-size: xx-small;color: #FF0000;font-family: inherit">会员总下注:{$sum_coin}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="font-size: xx-small;color: #FF0000;font-family: inherit">总输赢:{$winOrLose}</span>
+                        </th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="80">操作人</th>
+                        <th width="30">游戏名</th>
+                        <th width="30">操作名</th>
+                        <th width="30">输赢金额</th>
+                        <th width="30">变动前金额</th>
+                        <th width="30">变动后金额</th>
+                        <th width="30">备注</th>
+                        <th width="40">创建时间</th>
+                        <th width="30">创建IP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.user_name}</td>
+                            <td>{$vo.game_name}</td>
+                            <td>{$vo.action_name}</td>
+                            <td>{$vo.coin}</td>
+                            <td>{$vo.before_coin}</td>
+                            <td>{$vo.after_coin}</td>
+                            <td>{$vo.info}</td>
+                            <td>{$vo.create_time}</td>
+                            <td>{$vo.create_ip}</td>
+                        </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+                {$quick ?? ''}
+            </div>
+            <!--</div>-->
+            <div style="float: right">{$page}</div>
+
+        </article>
+    </div>
+</section>
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    laydate.render({
+        elem: '#test3' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true    //false隐藏控件底部按钮
+        ,type: 'datetime'
+    });
+    laydate.render({
+        elem: '#test4' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true   //false隐藏控件底部按钮
+        ,type: 'datetime'
+    });
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

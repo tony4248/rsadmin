@@ -1,0 +1,135 @@
+{include file="common:meta" /}
+
+<title>机器人列表 - 机器人列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/admin/layui/dist/css/layui.css"}
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        机器人管理
+        <span class="c-gray en">&gt;</span>
+        机器人列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <span class="l"> <a href="javascript:;" onclick="robot_add('添加机器人','/admin.php/admin/user/robot_add','800','500')" class="btn btn-secondary-outline radius"><i class="Hui-iconfont">&#xe600;</i> 添加机器人</a> </span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="9">机器人列表</th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="10">ID</th>
+                        <th width="40">名字</th>
+                        <th width="40">账号</th>
+                        <th width="40">余额</th>
+                        <th width="100">手机</th>
+                        <th width="100">注册时间</th>
+                        <th width="40">自动充值状态</th>
+                        <th width="30">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="data" id="vo"}
+                    <tr class="text-c">
+                        <td>{$vo.id}</td>
+                        <td>{$vo.nickname}</td>
+                        <td>{$vo.username}</td>
+                        <td>{$vo.coin}</td>
+
+                        <td>{$vo.phone}</td>
+                        <td>{$vo.create_time}</td>
+                        <td>
+                            <form class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block" style="margin-left: 0">
+                                        <input type="checkbox" lay-skin="switch" {$vo.auto? "checked=''": ""} lay-filter="switch" data-url="{:url('user/robot_auto_recharge_change',array('id'=>$vo['id']))}" lay-text="on|off">
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                        <td class="td-manage">
+                            <a href="javascript:;" onClick="robot_edit({$vo.id})" class="btn btn-primary-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                            <a href="javascript:;" onClick="robot_recharge({$vo.id})" class="btn btn-primary-outline radius size-MINI" style="text-decoration:none">充值</a>
+                            <a onclick="robot_del({$vo.id});" class="btn btn-danger-outline radius size-MINI">删除</a>
+                           </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <div style="float: right;"></div>
+    </div>
+</section>
+{load href="__STATIC__/admin/layui/dist/layui.all.js"}
+{include file="common:footer" /}
+<script>
+    /*机器人编辑*/
+    function robot_edit(id){
+        layer.open({
+            type:2,
+            title:'机器人编辑',
+            area:['480px','510px'],
+            shadeClose: true,
+            content: '/admin.php/admin/user/robot_edit?id='+id
+        });
+    }
+
+    function robot_recharge(id){
+        layer.open({
+            type:2,
+            title:'机器人充值',
+            area:['480px','400px'],
+            shadeClose: true,
+            content: '/admin.php/admin/user/robot_recharge?id='+id
+        });
+    }
+    /*机器人添加*/
+    function robot_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*机器人删除*/
+    function robot_del(id){
+        $.get("{:url('user/robot_del')}",{'id':id},function (res) {
+            if(res.code===1){
+                layer.msg(res.msg,{icon:1});
+                setTimeout(function () {
+                    window.location.reload();
+                },2000)
+            }else{
+                layer.msg(res.msg,{icon:2});
+            }
+        },'json')
+    }
+
+    layui.use('form', function(){
+        var form = layui.form;
+        form.on('switch(switch)', function(data) {
+            var url = $(this).data('url');
+            var auto = data.elem.checked;//开关是否开启，true或者false
+            //后台我需要的是0或1，所以预先在js中处理change的值
+            if(auto) {
+                auto = 1;
+            } else {
+                auto = 0;
+            }
+            $.post(url, {auto: auto}, function(res) {
+                if(res.code) {
+                    layer.msg(res.msg);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

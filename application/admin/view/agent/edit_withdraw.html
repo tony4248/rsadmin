@@ -1,0 +1,104 @@
+{include file="common:meta" /}
+
+<title>修改记录 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="" method="post" class="form form-horizontal form-agent-adda" id="form-withdraw-add">
+            <input type="hidden" name="oid" value="{$data.oid}">
+            <input type="hidden" name="uid" value="{$data.uid}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.uid}" placeholder="" id="uid" name="uid">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>金额：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.amount}" placeholder="" id="amount" name="amount">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">支付方式：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="width: 150px;">
+                    <select class="select" size="1" id="paymentType" name="paymentType">
+                        <option value="BANKCARD" {if condition="$data.paymentType eq 'BANKCARD'"}selected="selected"{/if}>银行卡</option>
+                        <option value="ALIPAY" {if condition="$data.paymentType eq 'ALIPAY'"}selected="selected"{/if}>支付宝</option>
+                        <option value="WEIXINPAY" {if condition="$data.paymentType eq 'WEIXINPAY'"}selected="selected"{/if}>微信支付</option>
+                    </select>
+                </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>支付账户ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.paymentId}" placeholder="输入支付账户ID" id="paymentId" name="paymentId">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>状态：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="radio-box">
+                        <input name="state" value="PENDING" type="radio" id="sex-1" {if condition="$data.state eq 'PENDING'" } checked {/if}>
+                        <label for="sex-1">待审批</label>
+                    </div>
+                    <div class="radio-box">
+                        <input name="state" value="APPROVED" type="radio" id="sex-2" {if condition="$data.state eq 'APPROVED'" } checked {/if}>
+                        <label for="sex-2">已批准</label>
+                    </div>
+                    <div class="radio-box">
+                        <input name="state" value="PROCESSED" type="radio" id="sex-3" {if condition="$data.state eq 'PROCESSED'" } checked {/if}>
+                        <label for="sex-2">已处理</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" type="button" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+        $('#button').click(function() {
+            var formData = $('.form-agent-adda').serialize();
+            $.ajax({
+                url: "{:url('agent/edit_withdraw')}",
+                type: 'post',
+                dataType: 'json',
+                data: formData,
+                success: function(res) {
+                    if (res.code === 0) {
+                        //失败
+                        layer.msg(res.msg, {
+                            icon: 2
+                        }, 300);
+                    } else {
+                        //成功
+                        layer.msg(res.msg, {
+                            icon: 1
+                        }, 300);
+                        var index1 = parent.layer.getFrameIndex(window.name);
+                        setTimeout(function() {
+                            parent.location.reload();
+                            parent.layer.close(index1); //关闭弹出层
+                        }, 1000);
+                    }
+                }
+            })
+        })
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

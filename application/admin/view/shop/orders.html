@@ -1,0 +1,149 @@
+{include file="common:meta" /}
+
+<title>商店管理 - 订单管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+    #pname {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 商店管理 <span class="c-gray en">&gt;</span> 订单管理<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="cl pd-5 bg-1 bk-gray mt-20" style="margin-top: 0px;">
+                    <div class="l"><a onclick="order_add_s()" class='btn btn-secondary-outline radius'><i class='Hui-iconfont'>&#xe600;</i> 添加记录</a>
+                    </div>
+                </div>
+                <div id="pname">{$pname ?? ''}</div>
+                <div class="mt-20">
+                    <div class="table-responsive">
+                        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                            <tr class="text-c">
+                                <th width="120">订单ID</th>
+                                <th width="70">用户ID</th>
+                                <th width="50">账号</th>
+                                <th>钻石</th>
+                                <th>积分</th>
+                                <th>订单类型</th>
+                                <th>产品类型</th>
+                                <th>产品名称</th>
+                                <th>数量</th>
+                                <th>金额</th>
+                                <th>状态</th>
+                                <th>支付方式</th>
+                                <th>支付账号</th>
+                                <th>时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="data" id="vo"}
+                            <tr class="text-c">
+                                <td id="id1">{$vo.id}</td>
+                                <td id="id1">{$vo.uid}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.cardNum}</td>
+                                <td>{$vo.score}</td>
+                                <td>{if condition="$vo.type eq 'VIPRECHARGE'"}VIP充值{elseif condition="$vo.type eq 'RECHARGE'"/}充值{elseif condition="$vo.type eq 'WITHDRAW'"/}提现{else /}未知{/if}</td>
+                                <td>{if condition="$vo.prodType eq 'CARD'"}钻石{elseif condition="$vo.prodType eq 'COIN'"/}金币{elseif condition="$vo.prodType eq 'PROPS'"/}道具{elseif condition="$vo.prodType eq 'COMMODITY'"/}实物{else /}未知{/if}</td>
+                                <td>{$vo.prodName}</td>
+                                <td>{$vo.qty}</td>
+                                <td>{$vo.amount}</td>
+                                <td>{if condition="$vo.state eq 'PENDING'"}待审批{elseif condition="$vo.state eq 'APPROVED'"/}已批准{elseif condition="$vo.state eq 'PROCESSED'"/}已处理{else /}未知{/if}</td>
+                                <td>{$vo.paymentType}</td>
+                                <td>{$vo.paymentId}</td>
+                                <td>{$vo.createTime}</td>
+                                <td class="td-manage">
+                                    <a href="javascript:;" onClick="order_edit('编辑订单','/admin.php/admin/shop/edit_order?uid={$vo.uid}&oid={$vo.id}','4','','400')" class="btn btn-primary-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                                    <a {if condition="$vo.state eq 'PROCESSED'" }hidden{else /}{/if} href="javascript:;" onclick="order_del({$vo.uid}, '{$vo.id}')" class="btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    {$quick ?? ''}
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+    {include file="common:footer" /}
+    <script type="text/javascript">
+        /*用户-编辑*/
+        function order_add_s(title, url, id, w, h) {
+            layer.open({
+                type: 2,
+                title: '添加记录',
+                area: ['480px', '550px'],
+                shadeClose: true,
+                content: '/admin.php/admin/shop/add_order'
+            });
+        }
+        /*卡号-编辑*/
+        function order_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        /*提佣记录-删除*/
+        function order_del(uid, oid) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('shop/del_order')}",
+                    type: 'post',
+                    data: {
+                        'uid': uid,
+                        'oid': oid,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

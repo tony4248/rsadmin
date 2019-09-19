@@ -1,0 +1,142 @@
+{include file="common:meta" /}
+
+<title>俱乐部管理 - 俱乐部列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+    #pname {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 俱乐部管理 <span class="c-gray en">&gt;</span> 俱乐部列表<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <form class="form-inline" role="form" method="get" action="{:url('club/search')}">
+                    <div class="form-group">
+                        <span style="color: red;">查询</span> 俱乐部Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="clubId" placeholder="请输入俱乐部的Id" value="{$clubId ? $clubId : '';}">用户Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="userId" placeholder="请输入代理的账号Id" value="{$userId ? $userId : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+                <div id="pname">{$pname ?? ''}</div>
+                <div class="mt-20">
+                    <div class="table-responsive">
+                        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                            <tr class="text-c">
+                                <th width="50">俱乐部ID</th>
+                                <th width="70">名称</th>
+                                <th>拥有者ID</th>
+                                <th>游戏</th>
+                                <th>费率</th>
+                                <th>等级</th>
+                                <th>状态</th>
+                                <th>会员</th>
+                                <th>玩法配置</th>
+                                <th>在线对局</th>
+                                <th>离线对局</th>
+                                <th>管理员容量</th>
+                                <th>会员容量</th>
+                                <th>自动批准</th>
+                                <th width="">创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="data" id="vo"}
+                            <tr class="text-c">
+                                <td id="id1">{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.ownerId}</td>
+                                <td>{$vo.gameType}</td>
+                                <td>{$vo.feeRate}</td>
+                                <td>{$vo.level}</td>
+                                <td>{if condition="$vo.state eq 'ACTIVE'"}有效{elseif condition="$vo.state eq 'DISABLED'"}无效{else /}未知{/if}</td>
+                                <td>{$vo.members}<a {if condition="$vo.members eq 0" }hidden{else /}{/if} href="javascript:;" onClick="subagent_get('会员','/admin.php/admin/club/getclubmembers?id={$vo.id}','4','','550')" style="color:red"> | 查看</a></td>
+                                <td>{$vo.gameConfs}<a {if condition="$vo.gameConfs eq 0" }hidden{else /}{/if} href="javascript:;" onClick="subagent_get('玩法配置','/admin.php/admin/club/getclubgameconfs?id={$vo.id}','4','','550')" style="color:red"> | 查看</a></td>
+                                <td>{$vo.onlineRooms}</td>
+                                <td>{$vo.offlineRooms}<a href="/admin.php/admin/user/search_gamersls?&roomId=&clubId={$vo.id}" {if condition="$vo.offlineRooms eq 0" }hidden{else /}{/if} style="color:red"> | 查看</a></td>
+                                <td>{$vo.adminsCapacity}</td>
+                                <td>{$vo.membersCapacity}</td>
+                                <td>{$vo.autoApprove}</td>
+                                <td>{$vo.createTime}</td>
+                                <td class="td-manage">
+                                    <a href="javascript:;" onClick="club_edit('编辑','/admin.php/admin/club/edit_club?id={$vo.id}','4','','400')" class="btn btn-primary-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                                    <a href="javascript:;" onClick="club_transfer('转移','/admin.php/admin/club/transfer_club?id={$vo.id}','4','','400')" class="btn btn-secondary-outline radius size-MINI" style="text-decoration:none">转移</a>
+                                    <a href="javascript:;" onclick="club_del({$vo.id})" class="btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    {$quick ?? ''}
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+
+
+    <script type="text/javascript">
+        /*用户-编辑*/
+        function club_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*显示下级代理*/
+        function subagent_get(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*用户-删除*/
+        function club_del(id) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('club/del_club')}",
+                    type: 'post',
+                    data: {
+                        'id': id,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+        /*用户-充值*/
+        function club_transfer(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+{include file="common:meta" /}
+
+<title>会员列表 - 会员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+    #pname {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 会员列表<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="cl pd-5 bg-1 bk-gray mt-20" style="margin-top: 0px;">
+                    <div class="l">
+                        <div><a onclick='user_add_s();' class='btn btn-success-outline radius'><i class='Hui-iconfont'>&#xe600;</i> 添加用户</a></div>
+                    </div>
+                </div>
+                <form class="form-inline" role="form" method="get" action="{:url('user/user_list')}">
+                    <div class="form-group">
+                        <span style="color: red;">用户查询</span>账号:<input style="width: 120px;" type="text" class="input-text" name="username" placeholder="请输入账号" value="{$username ? $username : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">用户查询</button>
+                </form>
+                <div id="pname">{$pname ?? ''}</div>
+                <div class="mt-20">
+                    <div class="table-responsive">
+                        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                            <tr class="text-c">
+                                <th width="50">ID</th>
+                                <th>账号</th>
+                                <th>昵称</th>
+                                <th width="70">openId</th>
+                                <th>等级</th>
+                                <th>钻石</th>
+                                <th>积分</th>
+                                <th>充提余额</th>
+                                <th>累计充值</th>
+                                <th>累计提现</th>
+                                <th>手机</th>
+                                <th width="">加入时间</th>
+                                <th>是否在线</th>
+                                <th>是否锁定</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="data" id="vo"}
+                            <tr class="text-c">
+                                <td id="id1">{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.nickName}</td>
+                                <td>{$vo.openId}</td>
+                                <td>{$vo.level}</td>
+                                <td>{$vo.cardNum}</td>
+                                <td>{$vo.score}</td>
+                                <td>{$vo.balance}<a href="javascript:;" onClick="member_edit('订单记录','/admin.php/admin/shop/order_records?userId={$vo.id}','4','','620')"> | <span style="color: #ff0000">记录</span></a></td>
+                                <td>{$vo.rechargeSum}</td>
+                                <td>{$vo.withdrawSum}</td>
+                                <td>{$vo.mobile}</td>
+                                <td>{$vo.createTime}</td>
+                                <td>{if condition="$vo.isOnline==0"}否{else /}是{/if}</td>
+                                <td>{if condition="$vo.locked==0"}未锁定{else /}锁定{/if}</td>
+                                <td>
+                                    <a href="javascript:;" onClick="member_charge('充值','/admin.php/admin/user/user_charge?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">充值</a>
+                                    <a href="javascript:;" onClick="member_edit('编辑','/admin.php/admin/user/edit?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                                    <a href="javascript:;" onClick="member_edit('邮件','/admin.php/admin/email/add?receiver={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">邮件</a>
+                                    <a href="javascript:;" onClick="member_edit('改密','/admin.php/admin/user/user_change?id={$vo.id}','4','','400')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">改密</a>
+                                    <a href="javascript:;" onclick="del_user({$vo.id})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    {$quick ?? ''}
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+
+
+    <script type="text/javascript">
+        function del_user(id) {
+            layer.confirm('确定要删除用户吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('user/delete_user')}",
+                    type: 'post',
+                    data: {
+                        id: id
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+        /*用户-编辑*/
+        function member_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*卡号-编辑*/
+        function edit_bank_card(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*密码-修改*/
+        function change_password(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*密码-修改*/
+        function zhuanYi(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        function member_charge(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*用户-删除*/
+        function member_del(id, agent) {
+            $.post('/admin.php/admin/agent/del', {
+                'id': id,
+                'aid': agent
+            }, function(res) {
+                if (res.code = 0) {
+                    layer.msg(res.msg);
+                } else {
+                    layer.msg(res.msg);
+                }
+            })
+        }
+        /*用户-充值*/
+        function member_re(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+
+        function member_add_user(id) {
+            layer.open({
+                type: 2,
+                area: ['480px', '510px'],
+                title: '用户添加',
+                shadeClose: true,
+                content: '/admin.php/admin/user/add?id=' + id //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+            });
+        }
+
+        function user_add_s() {
+            layer.open({
+                type: 2,
+                title: '用户添加',
+                area: ['480px', '510px'],
+                shadeClose: true,
+                content: '/admin.php/admin/user/user_add'
+            });
+        }
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+{include file="common:meta" /}
+
+<title>编辑用户 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="{:url('user/edit')}" method="post" class="form form-horizontal">
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">账号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.name}" placeholder="" id="name" name="name">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">昵称：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{$data.nickName}" autoComplete="off" placeholder="" id="nickName" name="nickName">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">OpenId：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.openId}" placeholder="" id="openId" name="openId">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">性别：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.sex}" placeholder="" id="sex" name="sex">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">头像：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.avatar}" placeholder="" id="avatar" name="avatar">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">级别：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="width: 150px;">
+                        <select class="select" size="1" id="level" name="level">
+                            <option value="BASIC" {if condition="$data.level eq 'BASIC'"}selected="selected"{/if}>BASIC</option>
+                            <option value="STANDARD" {if condition="$data.level eq 'STANDARD'"} selected="selected" {/if}>STANDARD</option>
+                            <option value="VIP1" {if condition="$data.level eq 'VIP1'"} selected="selected" {/if}>VIP1</option>
+                            <option value="VIP2" {if condition="$data.level eq 'VIP2'"} selected="selected" {/if}>VIP2</option>
+                            <option value="VIP3" {if condition="$data.level eq 'VIP3'"} selected="selected" {/if}>VIP3</option>
+                            <option value="VIP4" {if condition="$data.level eq 'VIP4'"} selected="selected" {/if}>VIP4</option>
+                            <option value="VIP5" {if condition="$data.level eq 'VIP5'"} selected="selected" {/if}>VIP5</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">手机：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.mobile}" name="mobile" id="mobile">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">钻石：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.cardNum}" name="cardNum" id="cardNum">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">积分：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.score}" name="score" id="score">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">实名：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.realName}" name="realName" id="realName">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">身份证号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.idCardNo}" name="idCardNo" id="idCardNo">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.address}" name="address" id="address">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">邮件地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.email}" name="email" id="email">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">开户行：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.bankName}" name="bankName" id="bankName">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">银行账户：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.bankAccount}" name="bankAccount" id="bankAccount">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">银行卡号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.bankCard}" name="bankCard" id="bankCard">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">支付宝账号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.alipayAccount}" name="alipayAccount" id="alipayAccount">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">支付宝ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.alipayId}" name="alipayId" id="alipayId">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">微信支付账号：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.wxpayAccount}" name="wxpayAccount" id="wxpayAccount">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">微信支付ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" autoComplete="off" value="{$data.wxpayId}" name="wxpayId" id="wxpayId">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">注册时间：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" disabled="disabled" value="{$data.createTime}" name="create_time" id="createTime">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">是否锁定：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="radio-box">
+                        <input name="locked" type="radio" value=0 {if condition="$data.locked eq false" } checked {/if}>
+                        <label for="sex-1">否</label>
+                    </div>
+                    <div class="radio-box">
+                        <input name="locked" type="radio" value=1 {if condition="$data.locked eq true" } checked {/if}>
+                        <label for="sex-2">是</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <button class="btn btn-primary radius" value="&nbsp;&nbsp;修改&nbsp;&nbsp;">修改</button>
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+
+</body>
+
+</html>

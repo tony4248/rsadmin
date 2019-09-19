@@ -1,0 +1,48 @@
+{include file="common:meta" /}
+
+<title>公告管理 - 编辑公告 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <article class="cl pd-20">
+        <form action="{:url('kefu/edit')}" method="post" class="form form-horizontal form-email-add">
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>内容：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <textarea name="content" class="textarea radius">{$data.content}</textarea>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3">状态：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="radio-box">
+                        <input name="active" type="radio" value=1 {if condition="$data.active eq true" } checked {/if}>
+                        <label for="sex-1">启用</label>
+                    </div>
+                    <div class="radio-box">
+                        <input name="active" type="radio" value=0 {if condition="$data.active eq false" } checked {/if}>
+                        <label for="sex-2">禁用</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input class="btn btn-primary radius" type="submit" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+{include file="common:meta" /}
+
+<title>RSCMS_V2后台管理系统</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="{:url('index/index')}" class="maincolor">首页</a>
+            <span class="c-999 en">&gt;</span>
+            <span class="c-666">我的桌面</span>
+            <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <p class="f-20 text-success">欢迎使用RSCMS 后台管理系统！
+                </p>
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                        <tr>
+                            <th colspan="2" scope="col">系统信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th width="30%">用户数量</th>
+                            <td><span>{$statistics.usesNum}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">代理数量</th>
+                            <td><span>{$statistics.agentsNum}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">俱乐部数量</th>
+                            <td><span>{$statistics.clubsNum}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">在线用户数量</th>
+                            <td><span>{$statistics.onlineUsersNum}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">在线Ai数量</th>
+                            <td><span>{$statistics.onlineAisNum}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">在线房间数量</th>
+                            <td><span>{$statistics.onlineRoomsNum}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                        <tr>
+                            <th colspan="2" scope="col">服务器信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th width="30%">当前域名</th>
+                            <td><span>{$config.url}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">网站目录</th>
+                            <td><span>{$config.document_root}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">操作系统</th>
+                            <td><span>{$config.server_os}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">服务器端口</th>
+                            <td><span>{$config.server_port}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">服务器ip</th>
+                            <td><span>{$config.server_ip}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">WEB运行环境</th>
+                            <td><span>{$config.server_soft}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">php版本</th>
+                            <td><span>{$config.php_version}</span></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">zend版本</th>
+                            <td><span>{$config.zend_banben}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <footer class="footer">
+                <p>感谢使用RSCMS后台管理系统<br> Copyright &copy;2019 RSCMS_V2 All Rights Reserved.<br> 本后台系统由<a href="http://#/" target="_blank" title="RSCMS">RSCMS</a>提供</p>
+            </footer>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+
+</body>
+
+</html>

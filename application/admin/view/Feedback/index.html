@@ -1,0 +1,101 @@
+{include file="common:meta" /}
+<title>反馈管理 - 反馈列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+            <span class="c-gray en">&gt;</span> 反馈管理
+            <span class="c-gray en">&gt;</span> 反馈列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <form class="form-inline" role="form" method="get" action="{:url('feedback/search')}">
+                    <div class="form-group">
+                        <span style="color: red;">查询</span> 提交人Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="sender" placeholder="请输入提交人的Id" value="{$sender ? $sender : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="9">邮件列表</th>
+                        </tr>
+                        <tr class="text-c">
+                            <th width="120">Id</th>
+                            <th width="40">发送者</th>
+                            <th width="70">标题</th>
+                            <th width="120">内容</th>
+                            <th width="120">回复</th>
+                            <th width="60">发送时间</th>
+                            <th width="60">回复时间</th>
+                            <th width="30">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.sender}</td>
+                            <td>{$vo.title}</td>
+                            <td>{$vo.content}</td>
+                            <td>{$vo.replyContent}</td>
+                            <td>{$vo.createdDate}</td>
+                            <td>{$vo.replyDate}</td>
+                            <td class="td-manage">
+                                <a title="编辑" href="javascript:;" onclick="feedback_reply('回复','/admin.php/admin/feedback/reply?id={$vo.id}','1','800','500')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">回复</a>
+                                <a title="删除" href="javascript:;" onclick="feedback_del({$vo.id})" class="ml-5 btn btn-warning-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                        </tr>
+                        {/volist}
+                    </tbody>
+                </table>
+                {$quick ?? ''}
+            </article>
+            <div style="float: right;">{$page}</div>
+        </div>
+    </section>
+    {include file="common:footer" /}
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        /*管理员-增加*/
+        function email_add(title, url, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*管理员-删除*/
+        function feedback_del(id) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('feedback/del')}",
+                    type: 'post',
+                    data: {
+                        'id': id,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+        /*管理员-编辑*/
+        function feedback_reply(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

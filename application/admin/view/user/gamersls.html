@@ -1,0 +1,131 @@
+{include file="common:meta" /}
+
+<title>用户管理- 对局记录 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+    #pname {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 对局记录<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <form class="form-inline" role="form" method="get" action="{:url('user/search_gamersls')}">
+                    <div class="form-group">
+                        <span style="color: red;">查询</span> 房间Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="roomId" placeholder="请输入房间的Id" value="{$roomId ? $roomId : '';}">&nbsp;俱乐部Id:
+                        <input style="width: 120px;" type="text" class="input-text" name="clubId" placeholder="请俱乐部的Id" value="{$clubId ? $clubId : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+                <div id="pname">{$pname ?? ''}</div>
+                <div class="mt-20">
+                    <div class="table-responsive">
+                        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                            <tr class="text-c">
+                                <th width="50">房间ID</th>
+                                <th width="70">价格</th>
+                                <th>收费模式</th>
+                                <th>底分</th>
+                                <th>游戏</th>
+                                <th width="50">房主ID</th>
+                                <th>分类</th>
+                                <th>容量</th>
+                                <th>局数</th>
+                                <th>最小带入</th>
+                                <th>最大带入</th>
+                                <th>玩家数</th>
+                                <th width="">创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="data" id="vo"}
+                            <tr class="text-c">
+                                <td id="id1">{$vo.id}</td>
+                                <td>{$vo.price}</td>
+                                <td>{if condition="$vo.chargingMode eq 'OWNER'"}房主{elseif condition="$vo.chargingMode eq 'AA'"/}AA{else /}未知{/if}</td>
+                                <td>{$vo.bottomScore}</td>
+                                <td>{$vo.type}</td>
+                                <td>{$vo.owner}</td>
+                                <td>{$vo.category}</td>
+                                <td>{$vo.capacity}</td>
+                                <td>{$vo.rounds}</td>
+                                <td>{$vo.minChips}</td>
+                                <td>{$vo.maxChips}</td>
+                                <td>{$vo.users}</td>
+                                <td>{$vo.createDate}</td>
+                                <td class="td-manage">
+                                    <a href="javascript:;" onClick="room_details('对局详情','/admin.php/admin/user/gamersl?id={$vo.id}','4','','400')" class="btn btn-primary-outline radius size-MINI" style="text-decoration:none">对局详情</a>
+                                    <a href="javascript:;" onclick="room_del({$vo.id})" class="btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    {$quick ?? ''}
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+
+
+    <script type="text/javascript">
+        /*用户-编辑*/
+        function room_details(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        /*用户-删除*/
+        function room_del(id) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('user/del_gamersl')}",
+                    type: 'post',
+                    data: {
+                        'id': id,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+
+        laydate.render({
+            elem: '#test3' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test4' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

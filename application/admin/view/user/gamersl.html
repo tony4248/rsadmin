@@ -1,0 +1,67 @@
+{include file="common:meta" /}
+
+<title>对局记录 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+            <tr class="text-c">
+                <th colspan="3" bgcolor="#b3ecff">对局总计</th>
+            </tr>
+            <tr class="text-c">
+                <th width="50">用户Id</th>
+                <th width="20">账号</th>
+                <th width="20">总得分</th>
+            </tr>
+            {volist name="data" id="vo"}
+            <tr class="text-c">
+                <td id="id1">{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo.awarded}</td>
+            </tr>
+            {/volist}
+        </table>
+        <BR/>
+        <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+            <tr class="text-c">
+                <th colspan="7" bgcolor="#b3ecff">每局详情</th>
+            </tr>
+            <tr class="text-c">
+                <th width="50">用户Id</th>
+                <th>账号</th>
+                <th>席位号</th>
+                <th>是否是庄</th>
+                <th>是否赢</th>
+                <th>当前积分</th>
+                <th>得分</th>
+            </tr>
+            {volist name="ddata" id="dvo"}
+            <tr class="text-c">
+                <th colspan="7">第{$dvo.roundIdx}局</th>
+            </tr>
+            {volist name="dvo.userRsls" id="uRsl"}
+            <tr class="text-c">
+                <td id="id1">{$uRsl.id}</td>
+                <td>{$uRsl.name}</td>
+                <td>{$uRsl.seatNo}</td>
+                <td>{if condition="$uRsl.dealer eq 1"}是{else /}否{/if}</td>
+                <td>{if condition="$uRsl.win eq 1"}是{else /}否{/if}</td>
+                <td>{$uRsl.score}</td>
+                <td>{$uRsl.awarded}</td>
+            </tr>
+            {/volist} {/volist}
+        </table>
+    </div>
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"} {load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}
+    <script type="text/javascript">
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

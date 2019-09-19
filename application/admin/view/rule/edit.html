@@ -1,0 +1,70 @@
+{include file="common:meta" /}
+<title>权限添加 - 管理员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+<article class="cl pd-20">
+    <form action="{:url('rule/edit')}" method="post" class="form form-horizontal" id="form-admin-add">
+        <input type="hidden" name="id" value="{$rules.id}">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上级规则</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select name="pid">
+                    <option value="0">顶级规则</option>
+                    {volist name="ruleTree" id="rule"}
+                    <option {if condition="$rules['pid'] eq $rule['id']"} selected="selected" {/if} value="{$rule.id}"><?php echo str_repeat('-', $rule['level']*6)?>{$rule.title}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>规则名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$rules.title}" placeholder="" id="title" name="title">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>规则：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$rules.name}" placeholder="" id="name" name="name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否启用：</label>
+            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="radio-box">
+                    <input name="show" type="radio" value="0" {if condition="$rules['status'] eq 0"} checked="checked" {/if}>
+                    <label for="sex-1">是</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" value="1" name="show" {if condition="$rules['status'] eq 1"} checked="checked" {/if}>
+                    <label for="sex-2">否</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否隐藏：</label>
+            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="radio-box">
+                    <input name="status" value="0" type="radio" {if condition="$rules['show'] eq 0"} checked="checked" {/if}>
+                    <label for="sex-1">是</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" value="1" name="status" {if condition="$rules['show'] eq 1"} checked="checked" {/if}>
+                    <label for="sex-2">否</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+{include file="common:footer"}
+
+</body>
+</html>

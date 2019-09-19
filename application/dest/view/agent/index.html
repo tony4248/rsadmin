@@ -1,0 +1,102 @@
+{include file="common:meta" /}
+
+    <title>分销管理 - 分销列表 - RSCMS_V2</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        分销管理
+        <span class="c-gray en">&gt;</span>
+        分销列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <span class="l"> <a href="javascript:;" onclick="admin_add('添加代理','{:url("agent/add")}','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加我的代理</a></span>&nbsp;&nbsp;&nbsp;
+                <span class="l"> <a href="javascript:;" onclick="admin_add('添加用户','/index.php/dest/agent/addUserYh?id={$Request.session.user_id}','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加我的用户</a></span>
+                <span style="float: right;" ><a class="btn btn-default radius" href="{:url('agent/index')}" >返回</a></span>
+            </div>
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">代理列表</th>
+                </tr>
+                <tr class="text-c">
+                    <td>ID</td>
+                    <th>下级代理</th>
+                    <th>代理数量</th>
+                    <th>查看下级</th>
+                    <th>转移</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr class="text-c" >
+                    <td>{$vo.id}</td>
+                    <td>{$vo.nickname} ({if condition="$vo.agent == 0"}代理{else /}用户{/if})</td>
+                    <td>{php}echo ($vo['rgt']-$vo['lft']-1)/2;{/php}</td>
+                    <td><a {if condition="($vo['rgt']-$vo['lft']-1)/2 == 0"}hidden{else /}{/if} href="/index.php/dest/agent/index?id={$vo.id}" style="color:red">查看下级</a></td>
+                    <td><a  href="javascript:;" onclick="user_transfer('转移','/index.php/dest/agent/transfer?id={$vo.id}&aid={$vo.agent}','800','500')" class="btn btn-default radius"><i class="Hui-iconfont">&#xe600;</i> 转移</a>
+                    </td>
+                    <td>
+                        <!--<a title="删除" href="/index.php/dest/agent/del?id={$vo.id}&aid={$vo.agent}" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>-->
+                        <a href="javascript:;" onclick="del_user({$vo.id},{$vo.agent})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    /*代理-增加*/
+    function admin_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    /*用户转移*/
+    function user_transfer(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    function del_user(id,aid){
+        layer.confirm('确定要删除用户吗？', {
+            btn: ['确定','再想想'] //按钮
+        }, function(){
+            $.ajax({
+                url:"{:url('agent/del')}",
+                type:'post',
+                data:{id:id,aid:aid},
+                success:function (res) {
+                    if(res.code === 0){
+                        layer.msg(res.msg);
+                    }else{
+                        layer.msg(res.msg);
+                        setTimeout(function(){
+                            parent.location.reload();
+                        }, 1000);
+                    }
+                }
+            });
+        })
+    }
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

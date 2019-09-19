@@ -1,0 +1,125 @@
+{include file="common:meta" /}
+<title>菜单管理</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span> 权限列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="admin_role_add('添加规则','/admin.php/admin/rule/add','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 规则添加</a></span> </div>
+            <div class="mt-10">
+                <div class="table-responsive">
+                <table class="table table-border table-bordered table-hover table-bg">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="9">菜单管理</th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="40">ID</th>
+                        <th width="80">菜单名称</th>
+                        <th width="100">路径</th>
+                        <th width="100">状态</th>
+                        <th width="70">操作</th>
+                        <th width="70">下拉</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="ruleTree" id="vo"}
+                    <tr class="text-c"  id="{$vo.id}" pid="{$vo.pid}">
+                        <td align="center">{$vo.id}</td>
+                        <td style="text-align: left;"><?php echo str_repeat('-', $vo['level']*6)?>{$vo.title}</td>
+                        <td>{$vo.name}</td>
+                        <td>
+                            {if condition="$vo.status eq 0"}<span class="label label-success radius">正常</span>
+                            {else /}<span class="label label-danger radius">禁用</span>
+                            {/if}
+                        </td>
+                        <td class="f-14"><a title="编辑" class="btn btn-warning-outline radius size-MINI" href="javascript:;" onclick="admin_role_edit('权限编辑','/admin.php/admin/rule/edit?id={$vo.id}')" style="text-decoration:none">编辑</a> <a title="删除" href="javascript:;" onclick="del({$vo.id})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                        <td align="center"><span class="open">+</span></td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<script type="text/javascript">
+
+//栏目伸缩状态js
+$('tr[pid!=0]').hide();
+$('.open').click(function(){
+    var id=$(this).parents('tr').attr('id');
+    if($(this).text()=='+'){
+        $(this).text('-');
+        $('tr[pid='+id+']').show();
+    }else{
+        $(this).text('+');
+        // $('tr[pid='+id+']').hide();
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            data:{ruleid:id},
+            url:"{:url('rule/ajaxlst')}",
+            success:function(data){
+                var sonids=[];
+                var idsobj=$('tr[pid!=0]');
+                idsobj.each(function(k,v){
+                    sonids.push($(this).attr('id'));
+                });
+                $.each(data,function(k,v){
+                    if($.inArray(v,sonids)){
+                        $('tr[id='+v+']').hide();
+                        $('tr[id='+v+']').find('span:first').text('+');
+                    }
+                });
+            }
+        });
+    }
+});
+function del(id){
+    $.get('/admin.php/admin/rule/del',{'id':id},function (res) {
+        if(res.code=0){
+            layer.msg(res.msg);
+        }else{
+            layer.msg(res.msg);
+        }
+    })
+}
+    function child(pid){
+        window.location.href = "index?pid="+pid;
+    }
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,'500');
+    }
+    /*管理员-角色-编辑*/
+    function admin_role_edit(title,url,id,w,h){
+        layer_show(title,url,w,'400');
+    }
+    /*管理员-角色-删除*/
+    function admin_role_del(obj,id){
+        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+            //此处请求后台程序，下方是成功后的前台处理……
+
+
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
+    }
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

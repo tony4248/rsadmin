@@ -1,0 +1,126 @@
+{include file="common:meta" /}
+
+<title>运营管理 - 黑名单列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/admin/layui/dist/css/layui.css"}
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        游戏管理
+        <span class="c-gray en">&gt;</span>
+        游戏列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <form class="form-inline" role="form" method="get" action="{:url('game_list/index')}">
+                    <div class="form-group">
+                        <span style="color: #ff0000">根据状态搜索:</span><span class="select-box" style="width: 120px;">
+                            <select name="status"  class="select">
+                                  <option value="" selected>请选择状态</option>
+                                  <option value=1>开启</option>
+                                  <option value=0>关闭</option>
+                            </select>
+                        </span>
+                    </div>
+                    <button type="submit" class="btn btn-default">用户查询</button>
+                </form>
+            </div>
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">游戏列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="40">ID</th>
+                    <th width="80">游戏名</th>
+                    <th width="30">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr class="text-c" style="height: 10px;">
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td style="width: 40px;">
+                        <form class="layui-form">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block" style="margin-left: 0">
+                                    <input type="checkbox" lay-skin="switch" {$vo.status ? "checked=''": ""} lay-filter="switch" data-url="{:url('game_list/changeShow',array('id'=>$vo['id']))}" lay-text="开|关">
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+            <div style="float: right">{$page}</div>
+
+        </article>
+    </div>
+</section>
+{load href="__STATIC__/admin/layui/dist/layui.all.js"}
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    /*删除*/
+    function member_del(id){
+        $.post("{:url('IpWhitelist/delete')}",{'id':id},function (res) {
+            if(res.code===0){
+                layer.msg(res.msg,{icon:2});
+            }else{
+                layer.msg(res.msg,{icon:1});
+                setTimeout(function () {window.location.reload()},2000)
+            }
+        })
+    }
+
+    /*批量删除*/
+//    function datadel(){
+//        var ids = [];
+//        $("input:checkbox[name='checkdel']:checked").each(function(i) { // 遍历name=test的多选框
+//            ids[i] = $(this).val();// 每一个被选中项的值
+//        });
+//        $.post("{:url('IpWhitelist/check_box_del')}",{ids:ids},function(res){
+//            if(res.code===1){
+//                layer.msg('批量删除成功');
+//                setTimeout(function () {window.location.reload()},2000)
+//            }else{
+//                layer.msg('批量删除失败');
+//            }
+//        },'json')
+//    }
+    layui.use('form', function(){
+        var form = layui.form;
+        form.on('switch(switch)', function(data) {
+            var url = $(this).data('url');
+            var status = data.elem.checked;//开关是否开启，true或者false
+            //后台我需要的是0或1，所以预先在js中处理change的值
+            if(status) {
+                status = 1;
+            } else {
+                status = 0;
+            }
+            $.post(url, {status: status}, function(res) {
+                if(res.code) {
+                    layer.msg(res.msg);
+                }
+            });
+        });
+    });
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

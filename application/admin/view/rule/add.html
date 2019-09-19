@@ -1,0 +1,96 @@
+{include file="common:meta" /}
+<title>权限添加 - 管理员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+<article class="cl pd-20">
+    <form action="" method="post" class="form form-horizontal" id="form-admin-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上级规则</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select name="pid">
+                    <option selected="selected" value="0">顶级规则</option>
+                    {volist name="ruleTree" id="vo"}
+                    <option value="{$vo.id}"><?php echo str_repeat('—', $vo['level']*2)?>{$vo.title}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>规则名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="title" name="title">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>规则：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="name" name="name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否启用：</label>
+            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="radio-box">
+                    <input name="show" type="radio" value="0" checked>
+                    <label for="sex-1">是</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" value="1" name="show">
+                    <label for="sex-2">否</label>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否隐藏：</label>
+            <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="radio-box">
+                    <input name="status" value="0" type="radio"  checked>
+                    <label for="sex-1">是</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" value="1" name="status">
+                    <label for="sex-2">否</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="button" id="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+{include file="common:footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    $('#button').click(function () {
+        var formData =  $('#form-admin-add').serialize();
+        $.ajax({
+            type:'post',
+            url:"{:url('rule/add')}",
+            dataType:'json',
+            data:formData,
+            success:function (res) {
+                if(res.code===0){
+                    layer.msg(res.msg,{icon:2},300);
+                }else{
+                    layer.msg(res.msg,{icon:1},300);
+                    var index1 = parent.layer.getFrameIndex(window.name);
+                    setTimeout(function(){
+                        parent.location.reload();
+                        parent.layer.close(index1);//关闭弹出层
+                    }, 2000);
+                }
+            }
+        })
+    });
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

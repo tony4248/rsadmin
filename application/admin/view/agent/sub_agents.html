@@ -1,0 +1,47 @@
+{include file="common:meta" /}
+
+<title>下级代理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <div class="table-responsive">
+            <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                <tr class="text-c">
+                    <th width="50">ID</th>
+                    <th width="70">账号</th>
+                    <th>昵称</th>
+                    <th width="50">上级ID</th>
+                    <th>直属下级</th>
+                    <th>全部下级</th>
+                    <th>直属会员</th>
+                    <th>全部会员</th>
+                    <th>状态</th>
+                    <th width="">加入时间</th>
+                    <th width="">失效时间</th>
+                </tr>
+                {volist name="data" id="vo"}
+                <tr class="text-c">
+                    <td id="id1">{$vo.uid}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.nickName}</td>
+                    <td>{$vo.pid}</td>
+                    <td>{$vo.directSubAgents}</td>
+                    <td>{$vo.allSubAgents}</td>
+                    <td>{$vo.directMbrsNum}</td>
+                    <td>{$vo.allMbrsNum}</td>
+                    <td>{if condition="$vo.state eq 'PENDING'"}待审批{elseif condition="$vo.state eq 'APPROVED'"/}有效{elseif condition="$vo.state eq 'DISABLED'"/}无效{else /}未知{/if}</td>
+                    <td>{$vo.createTime}</td>
+                    <td>{$vo.disableTime}</td>
+                </tr>
+                {/volist}
+            </table>
+        </div>
+        <div style="float: right;">{$page}</div>
+    </div>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+{include file="common:meta" /}
+<title>会员列表 - 会员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 资金 <span class="c-gray en">&gt;</span> 资金明细<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="mt-20">
+                <form class="form-inline" role="form" method="get" action="{:url('user/userCount')}">
+                    <div class="form-group">
+                        <span style="color: red;">明细查询</span> 用户:<input style="width: 120px;" type="text" class="input-text" name="nickname" placeholder="请输入用户名" value="{$nickname ? $nickname : '';}">
+                        账号:<input style="width: 120px;" type="text" class="input-text" name="username" placeholder="请输入账号" value="{$username ? $username : '';}">
+                        开始时间：<input type="text" class="input-text radius size-S" style="width: 100px" autocomplete="off" name="start" value="{$start ? $start : '';}" id="test1">-<input type="text" class="input-text radius size-S" style="width: 100px" autocomplete="off" name="end" value="{$end ? $end : '';}" id="test2">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                    <table class="table table-border table-bordered table-hover table-bg table-sort" id="mytable">
+                        <thead>
+                        <tr class="text-c">
+                            <th>ID</th>
+                            <th>用户</th>
+                            <th>账号</th>
+                            <th>账户余额bank余额</th>
+                            <th>创建时间</th>
+                            <th>创建IP</th>
+                            <th>是否锁定</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.username}</td>
+                            <td>{$vo.nickname}</td>
+                            <td>{$vo.coin}</td>
+                            <td>{$vo.create_time}</td>
+                            <td>{$vo.create_ip}</td>
+                            <td>{$vo.lock}</td>
+                            <td>{$vo.status}</td>
+                        </tr>
+                        {/volist}
+                        <tr class="text-c" id="totalRow">
+                        </tr>
+                        <tr class="text-c">
+                            <td></td>
+                            <td>所有用户总计余额:</td>
+                            <td></td>
+                            <td>{$balances}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                {$quick ?? ''}
+            </div>
+        </article>
+        <div style="float: right;">{$page}</div>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+
+    laydate.render({
+        elem: '#test1' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true
+    });
+    laydate.render({
+        elem: '#test2' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true
+    });
+
+    $(document).ready(function() {
+        var totalRow = 0;
+        $('#mytable tr').each(function() {
+            $(this).find('td:eq(3)').each(function(){
+                totalRow += parseFloat($(this).text());
+            });
+        });
+
+        $('#totalRow').append('<td colspan="2">当前页合计</td><td colspan="1" style="text-align: center"><span style="color: #761c19">当前页总变动金额：</span></td><td>'+totalRow/2+'</td><td></td><td></td><td></td>');
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

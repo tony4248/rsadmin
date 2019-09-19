@@ -1,0 +1,114 @@
+{include file="common:meta" /}
+
+<form class="form-inline" role="form" method="get" action="{:url('agent/search')}">
+    <div class="form-group">
+        <span style="color: red;">代理用户查询</span> 昵称:<input style="width: 120px;" type="text" class="input-text" name="nickname" placeholder="请输入昵称" value="{$nickname ? $nickname : '';}">
+        账号:<input style="width: 120px;" type="text" class="input-text" name="username" placeholder="请输入账号" value="{$username ? $username : '';}">
+        手机号:<input style="width: 120px;" type="text" class="input-text" name="phone" placeholder="请输入手机号" value="{$phone ? $phone : '';}">
+        <span class="select-box" style="width: 120px;">
+              <select name="status"  class="select">
+                  <option value="" selected>请选择游客或者正式</option>
+                  <option value="{$status ? $status : '0';}">游客</option>
+                  <option value="{$status ? $status : '1';}">正式</option>
+              </select>
+        </span>
+        开始时间：<input type="text" autocomplete="off" name="startTime" id="test3">-<input type="text" name="endTime" id="test4" autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-default">用户查询</button>
+</form>
+<div class="mt-20" >
+    <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+        <tr class="text-c">
+            <th width="50">ID</th>
+            <th>昵称</th>
+            <th width="70">账号</th>
+            <th>代理数量</th>
+            <th>下级代理</th>
+            <th>总余额</th>
+            <th>积分</th>
+            <th>手机</th>
+            <th>银行卡</th>
+            <th width="">加入时间</th>
+            <th>上次登录ip</th>
+            <th>是否游客</th>
+            <th>是否锁定</th>
+            <th>操作</th>
+        </tr>
+        {volist name="data" id="vo"}
+        <tr class="text-c">
+            <td id="id1">{$vo.id}</td>
+            <td>{$vo.nickname} ({if condition="$vo.agent == 0"}代理{else /}用户{/if})</td>
+            <td>{$vo.username}</td>
+            <td>{php}echo ($vo['rgt']-$vo['lft']-1)/2;{/php}</td>
+            <td><a {if condition="($vo['rgt']-$vo['lft']-1)/2 == 0"}hidden{else /}{/if} href="/index.php/admin/agent/getchildreno?id={$vo.id}" id="send" style="color:red">查看下级</a></td>
+            <td>{$vo.coin}</td>
+            <td>{$vo.vip_exp}</td>
+            <td>{$vo.phone}</td>
+            <td>
+                <a href="javascript:;" onClick="edit_bank_card('卡号修改','/admin.php/admin/agent/edit_bank_card?id={$vo.id}&aid={$vo.agent}','4','','400')" class="ml-5" style="text-decoration:none">{$vo.bank_card}</a>
+            </td>
+            <td>{$vo.create_time}</td>
+            <td>{$vo.active_ip}</td>
+            <td>{if condition="$vo.status==0"}游客{else /}正式{/if}</td>
+            <td>{if condition="$vo.lock==0"}未锁定{else /}锁定{/if}</td>
+            <td class="td-manage">
+                <a href="javascript:;" onClick="member_edit('编辑','/admin.php/admin/agent/edit?id={$vo.id}&aid={$vo.agent}','4','','400')" class="ml-5" style="text-decoration:none">编辑</a>
+                <a href="javascript:;" onClick="member_re('充值','/admin.php/admin/agent/recharge?id={$vo.id}&aid={$vo.agent}','4','','200')" class="ml-5" style="text-decoration:none">充值</a>
+                <a href="javascript:;" onClick="member_re('邮件','/admin.php/admin/user/displayMail?id={$vo.id}','4','','400')" class="ml-5" style="text-decoration:none">邮件</a>
+                <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','/admin.php/admin/agent/changePassword?id={$vo.id}&aid={$vo.agent}','10001','600','270')" href="javascript:;" title="修改密码">改密</a>
+                <a style="text-decoration:none" class="ml-5" onClick="zhuanYi('转移','/admin.php/admin/agent/transfer?id={$vo.id}&aid={$vo.agent}','10001','600','270')" href="javascript:;" title="修改密码">转移</a>
+                <a href="javascript:;" onclick="member_del({$vo.id},{$vo.agent})" class="ml-5" style="text-decoration:none">删除</a></td>
+        </tr>
+        {/volist}
+    </table>
+    {$quick ?? ''}
+</div>
+<div style="float: right;">{$page}</div>
+{include file="common:footer"/}
+<script type="text/javascript">
+    /*用户-编辑*/
+    function member_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*卡号-编辑*/
+    function edit_bank_card(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function change_password(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function zhuanYi(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-删除*/
+    function member_del(id,agent){
+        $.post('/admin.php/admin/agent/del',{'id':id,'aid':agent},function (res) {
+            if(res.code=0){
+                layer.msg(res.msg);
+            }else{
+                layer.msg(res.msg);
+            }
+        })
+    }
+    /*用户-充值*/
+    function member_re(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    laydate.render({
+        elem: '#test3' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true    //false隐藏控件底部按钮
+    });
+    laydate.render({
+        elem: '#test4' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true   //false隐藏控件底部按钮
+    });
+
+</script>
+
+

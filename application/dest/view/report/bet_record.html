@@ -1,0 +1,159 @@
+{include file="common:meta" /}
+
+<title>报表管理 - 统计 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{load href="__STATIC__/admin/layui/dist/css/layui.css"}
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        报表管理
+        <span class="c-gray en">&gt;</span>
+        统计列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+
+            <form class="form-inline" role="form" method="get" action="{:url('report/bet_record')}">
+                <div class="form-group">
+                    <input style="width: 120px;" type="text" class="input-text" name="nickname" placeholder="用户名" value="{$nickname ? $nickname : '';}">
+                    <input style="width: 120px;" type="text" class="input-text" name="game_name" placeholder="游戏名" value="{$game_name ? $game_name : '';}">
+                    <input style="width: 120px;" type="text" class="input-text" name="action_name" placeholder="操作名" value="{$action_name ? $action_name : '';}">
+                    <input type="text" class="input-text" placeholder="开始时间" style="width: 100px;" autocomplete="off" name="startTime" id="test3">-<input type="text" name="endTime" placeholder="结束时间" id="test4" style="width: 100px;" class="input-text" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-success-outline">搜索</button>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-border table-bordered table-bg" id="mytable">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="1">统计列表</th>
+                        <th scope="col" colspan="8" style="border-left-color: #f5fafe">
+                            <a href="javascript:;" onclick="datadel()" class="btn btn-danger-outline radius size-MINI"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除
+                            </a>
+                        </th>
+                        <th colspan="2" style="border-left-color: #f5fafe">
+                            <span style="font-size: xx-small;color: #FF0000;font-family: inherit">会员总下注:{$total_sub}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="25"><input type="checkbox" name="" value=""></th>
+                        <th width="80">操作人</th>
+                        <th width="30">游戏名</th>
+                        <th width="30">操作名</th>
+                        <th width="30">下注金额</th>
+                        <th width="30">下注前金额</th>
+                        <th width="30">下注后金额</th>
+                        <th width="30">备注</th>
+                        <th width="40">下注时间</th>
+                        <th width="30">下注IP</th>
+                        <th width="30">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="data" id="vo"}
+                    <tr class="text-c">
+                        <label><td><input type="checkbox"  value="{$vo.id}" name="checkdel"></td></label>
+                        <td>{$vo.user_name}</td>
+                        <td>{$vo.game_name}</td>
+                        <td>{$vo.action_name}</td>
+                        <td>{$vo.coin}</td>
+                        <td>{$vo.before_coin}</td>
+                        <td>{$vo.after_coin}</td>
+                        <td>{$vo.info}</td>
+                        <td>{$vo.create_time}</td>
+                        <td>{$vo.create_ip}</td>
+                        <td>
+                            <a href="javascript:;" onclick="dele({$vo.id})" class="btn btn-danger-outline radius size-MINI"><i class="Hui-iconfont">&#xe6e2;</i> 删除
+                            </a>
+                        </td>
+                    </tr>
+                    {/volist}
+                    <tr id="totalRow" class="text-c">
+                        <td rowspan="6"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: right">{$page}</div>
+            {$quick ?? ''}
+        </article>
+    </div>
+</section>
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    laydate.render({
+        elem: '#test3' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true    //false隐藏控件底部按钮
+        ,type: 'datetime'
+    });
+    laydate.render({
+        elem: '#test4' //指定元素
+        ,calendar: true
+        ,theme: '#333'
+        ,showBottom: true   //false隐藏控件底部按钮
+        ,type: 'datetime'
+    });
+
+    $(document).ready(function () {
+        var totalRow = 0;
+        $('#mytable tr').each(function () {
+            $(this).find('td:eq(4)').each(function () {
+                totalRow += parseFloat($(this).text());
+            });
+        });
+
+        $('#totalRow').append('<td>当前页合计下注</td><td></td><td></td><td style="text-align: center">' + totalRow.toFixed(2) + '</td><td></td><td></td><td></td><td></td><td></td>');
+    });
+
+    /*批量删除*/
+    function datadel(){
+        var ids = [];
+        $("input:checkbox[name='checkdel']:checked").each(function(i) { // 遍历name=test的多选框
+            ids[i] = $(this).val();// 每一个被选中项的值
+        });
+        $.post("{:url('report/bet_batch_del')}",{ids:ids},function(res){
+            if(res.code===1){
+                layer.msg(res.msg);
+                setTimeout(function () {window.location.reload()},1000)
+            }else{
+                layer.msg(res.msg);
+            }
+        },'json')
+    }
+
+    /**
+     *  删除
+     * @param id
+     */
+    function dele(id){
+        $.get("{:url('report/delete')}",{id:id},function(res){
+            if(res.code===1){
+                layer.msg(res.msg);
+                setTimeout(function () {
+                    window.location.reload();
+                },1000)
+            }else{
+                layer.msg(res.msg);
+            }
+        });
+    }
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

@@ -1,0 +1,122 @@
+{include file="common:meta" /}
+<title>角色管理 - 管理员管理 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a> <span class="c-gray en">&gt;</span> 用户列表 <span class="c-gray en">&gt;</span> 二级代理统计 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+                title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <form class="form-inline" role="form" method="get" action="{:url('agent/agentStatistics')}">
+                    <div class="form-group">
+                        <span style="color: red;">代理查询</span> 用户Id:<input style="width: 120px;" type="text" class="input-text" name="userId" placeholder="请输入用户Id" value="{$userId ? $userId : '';}">
+                    </div>
+                    <button type="submit" class="btn btn-default">代理查询</button>
+                </form>
+                <div class="mt-10">
+                    <div class="table-responsive">
+                        <table class="table table-border table-bordered table-hover table-bg" id="mytable">
+                            <thead>
+                                <tr class="text-c">
+                                    <th colspan="5"></th>
+                                    <th colspan="5">本期业绩</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="text-c">
+                                    <th width="10">Id</th>
+                                    <th width="10">账号</th>
+                                    <th width="20">可提金额</th>
+                                    <th width="20">累计佣金</th>
+                                    <th width="20">累计提现</th>
+                                    <th width="20">自身业绩</th>
+                                    <th width="20">直属业绩</th>
+                                    <th width="20">团队业绩</th>
+                                    <th width="20">自身佣金</th>
+                                    <th width="20">团队佣金</th>
+                                    <th width="20">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="data" id="vo"}
+                                <tr class="text-c">
+                                    <td id="aid">{$vo.id}</td>
+                                    <td>{$vo.nickname}</td>
+                                    <td>{$vo.daili_num}{if condition="$vo.daili_num>0"}<a href="/admin.php/admin/agent/look_lower?id={$vo.id}"> | <span
+                                    style="color: #ff0000">下级</span></a>{/if}
+                                    </td>
+                                    <td>
+                                        {if condition="$vo.user_num != 0"}<a href="javascript:;" onClick="user_statistics('用户统计','/admin.php/admin/agent/user_statistics?id={$vo.id}','4','1000','700')" class="ml-5" style="text-decoration:none"><span
+                                    style="color: #ff0000">下级用户统计</span></a>{else /}无用户{/if}
+                                    </td>
+                                    <td>{$vo.tongji}</td>
+                                    <td>{$vo.coin}</td>
+                                    <td></td>
+                                </tr>
+                                {/volist}
+
+                            </tbody>
+                            {$quick ? $quick : ''}
+                            <tr id="totalRow" class="text-c">
+                                <td rowspan="6"></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="float: right;">{$page}</div>
+            </article>
+        </div>
+    </section>
+
+
+    {include file="common:footer" /}
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        function user_statistics(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        laydate.render({
+            elem: '#test1' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+        laydate.render({
+            elem: '#test2' //指定元素
+                ,
+            calendar: true,
+            theme: '#333',
+            showBottom: true //false隐藏控件底部按钮
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var totalRow = 0;
+            $('#mytable tr').each(function() {
+                $(this).find('td:eq(4)').each(function() {
+                    totalRow += parseFloat($(this).text());
+                });
+            });
+
+            var total_bet = 0;
+            $('#mytable tr').each(function() {
+                $(this).find('td:eq(5)').each(function() {
+                    total_bet += parseFloat($(this).text());
+                });
+            });
+
+            $('#totalRow').append('<td>当前页合计</td><td></td><td style="text-align: center">' + totalRow.toFixed(2) + '</td><td  style="text-align: center">' + total_bet.toFixed(2) + '</td><td></td>');
+        });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

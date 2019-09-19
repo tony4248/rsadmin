@@ -1,0 +1,101 @@
+{include file="common:meta" /}
+
+<title>运营管理 - IP段列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+{include file="common:header" /}
+
+{include file="common:menu" /}
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+        <span class="c-gray en">&gt;</span>
+        运营管理
+        <span class="c-gray en">&gt;</span>
+        IP段列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+                <span class="l" style="margin-right: 10px;"> <a href="javascript:;" onclick="admin_add('添加IP段黑名单','{:url("IpWhitelist/segment_add")}','800','200')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加IP段黑名单</a></span>&nbsp;&nbsp;&nbsp;
+                <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除
+                </a></span>
+            </div>
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th scope="col" colspan="9">代理列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="25"><input type="checkbox" name="" value=""></th>
+                    <td>id</td>
+                    <th>IP段开始</th>
+                    <th>IP段结束</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr class="text-c">
+                    <td><input type="checkbox"  value="{$vo.id}" name="checkdel"></td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.ip_start}</td>
+                    <td>{$vo.ip_end}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <a title="删除" href="javascript:;" onclick="member_del({$vo.id})" class="btn btn-warning-outline radius size-MINI" style="text-decoration:none">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"}
+{load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"}
+{load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+<script type="text/javascript">
+    /*添加*/
+    function admin_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    /*删除*/
+    function member_del(id){
+        $.post("{:url('IpWhitelist/segment_delete')}",{'id':id},function (res) {
+            if(res.code===0){
+                layer.msg(res.msg,{icon:2});
+            }else{
+                layer.msg(res.msg,{icon:1});
+                setTimeout(function () {window.location.reload()},1000)
+            }
+        })
+    }
+
+    /*批量删除*/
+    function datadel(){
+        var ids = [];
+        $("input:checkbox[name='checkdel']:checked").each(function(i) { // 遍历name=test的多选框
+            ids[i] = $(this).val();// 每一个被选中项的值
+        });
+        $.post("{:url('IpWhitelist/ipSegmentBulkDeletion')}",{ids:ids},function(res){
+            if(res.code===1){
+                layer.msg('批量删除成功');
+                setTimeout(function () {window.location.reload()},1000)
+            }else{
+                layer.msg('批量删除失败');
+            }
+        },'json')
+    }
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

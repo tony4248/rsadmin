@@ -1,0 +1,87 @@
+{include file="common:meta" /}
+<title>公告管理 - 公告列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+            <span class="c-gray en">&gt;</span> 公告管理
+            <span class="c-gray en">&gt;</span> 公告列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="cl pd-5 bg-1 bk-gray mt-20">
+                    <span class="l"> <a href="javascript:;" onclick="anncmnt_add('添加公告','/admin.php/admin/anncmnt/add','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加公告</a> </span>
+                </div>
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="9">公告列表</th>
+                        </tr>
+                        <tr class="text-c">
+                            <th width="70">ID</th>
+                            <th width="200">内容</th>
+                            <th width="60">状态</th>
+                            <th width="30">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.content}</td>
+                            <td class="td-status">
+                                {if condition="$vo.active eq true" }<span class="label label-warning radius">启用</span> {else /}<span class="label label-success radius">禁用</span> {/if}
+                            </td>
+                            <td class="td-manage">
+                                <a title="编辑" href="javascript:;" onclick="anncmnt_add('编辑','/admin.php/admin/anncmnt/edit?id={$vo.id}','800','500')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">编辑</a>
+                                <a title="删除" href="javascript:;" onclick="anncmnt_del('{$vo.id}')" class="ml-5 btn btn-warning-outline radius size-MINI" style="text-decoration:none">删除</a></td>
+                        </tr>
+                        {/volist}
+                    </tbody>
+                </table>
+                {$quick ?? ''}
+            </article>
+            <div style="float: right;">{$page}</div>
+        </div>
+    </section>
+    {include file="common:footer" /}
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        /*公告-增加*/
+        function anncmnt_add(title, url, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*公告-删除*/
+        function anncmnt_del(id) {
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.ajax({
+                    url: "{:url('anncmnt/del')}",
+                    type: 'post',
+                    data: {
+                        'id': id,
+                    },
+                    success: function(res) {
+                        if (res.code === 0) {
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                            setTimeout(function() {
+                                parent.location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            })
+        }
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

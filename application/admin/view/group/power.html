@@ -1,0 +1,133 @@
+{include file="common:meta" /}
+
+    <title>新建网站角色 - 管理员管理 - RSCMS_V2</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+</head>
+<body>
+<article class="cl pd-20">
+    <form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
+        <input type="hidden" value="{$authGroups.id}" name="id">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户组名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$authGroups.title}" placeholder="" id="title" name="title" datatype="*4-16" nullmsg="用户组不能为空" disabled="disabled">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">分配权限：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <table>
+                    {foreach name="data" item="vo"}
+                    <tr>
+                        <td>
+                            <label style="padding-right:15px;">
+                                <input id="{$vo.id}" value="{$vo.id}" name="rules[]" dataid="id-{$vo.id}" <?php if(in_array($vo['id'], $rules)){ echo 'checked="checked"';}?> class="colored-success checkbox-parent" type="checkbox">
+                                <span class="text">{$vo.title}</span>
+                            </label>
+                        </td>
+                    </tr>
+                    {foreach name="vo['children']" item="vo2"}
+                    <tr>
+                        <td style="padding-left:30px;">
+                            <label style="padding-right:15px;">
+                                <input <?php if(in_array($vo2['id'], $rules)){ echo 'checked="checked"';}?> class="colored-success checkbox-parent checkbox-child" id="{$vo2.id}" value="{$vo2.id}" name="rules[]"  dataid="id-{$vo.id}-{$vo2.id}" type="checkbox">
+                                <span class="text">{$vo2.title}</span>
+                            </label>
+                        </td>
+                    </tr>
+                    {if condition="$vo2['children']"}
+                    <tr>
+                        <td style="padding-left:60px;">
+                            {foreach name="vo2['children']" item="vo3"}
+                            <label style="padding-right:15px;">
+                                <input <?php if(in_array($vo3['id'], $rules)){ echo 'checked="checked"';}?> class="colored-success checkbox-child" id="{$vo3.id}" value="{$vo3.id}" name="rules[]" dataid="id-{$vo.id}-{$vo2.id}-{$vo3.id}" type="checkbox">
+                                <span class="text">{$vo3.title}</span>
+                            </label>
+                            {/foreach}
+                        </td>
+                    </tr>
+                    {/if}
+                    {/foreach}
+                    {/foreach}
+                </table>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <button type="button" class="btn btn-success radius" id="admin-role-save"><i class="icon-ok"></i> 确定</button>
+            </div>
+        </div>
+    </form>
+</article>
+
+{include file="common:footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+<!--{load href="__STATIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"}-->
+<!--{load href="__STATIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"}-->
+<!--{load href="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"}-->
+<script type="text/javascript">
+    /* 权限配置动态选择框 */
+    $(function () {
+        //动态选择框，上下级选中状态变化
+        $('input.checkbox-parent').on('change', function () {
+            var dataid = $(this).attr("dataid");
+            $('input[dataid^=' + dataid + ']').prop('checked', $(this).is(':checked'));
+        });
+        $('input.checkbox-child').on('change', function () {
+            var dataid = $(this).attr("dataid");
+            dataid = dataid.substring(0, dataid.lastIndexOf("-"));
+            var parent = $('input[dataid=' + dataid + ']');
+            if ($(this).is(':checked')) {
+                parent.prop('checked', true);
+                //循环到顶级
+                while (dataid.lastIndexOf("-") != 2) {
+                    dataid = dataid.substring(0, dataid.lastIndexOf("-"));
+                    parent = $('input[dataid=' + dataid + ']');
+                    parent.prop('checked', true);
+                }
+            } else {
+                //父级
+                if ($('input[dataid^=' + dataid + '-]:checked').length == 0) {
+                    parent.prop('checked', false);
+                    //循环到顶级
+                    while (dataid.lastIndexOf("-") != 2) {
+                        dataid = dataid.substring(0, dataid.lastIndexOf("-"));
+                        parent = $('input[dataid=' + dataid + ']');
+                        if ($('input[dataid^=' + dataid + '-]:checked').length == 0) {
+                            parent.prop('checked', false);
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+    /*角色组分配权限ajax提交form表单*/
+    $('#admin-role-save').click(function () {
+        $.ajax({
+            url:"{:url('group/power')}",
+            dataType:'json',
+            data:$('#form-admin-role-add').serialize(),
+            type:'post',
+            success:function (result) {
+                //执行成功
+                if(result.code===1){
+                    layer.msg(result.msg,{icon:1});
+                    var index = parent.layer.getFrameIndex(window.name);
+                    setTimeout(function () {
+                        parent.location.reload();
+                        parent.layer.clone(index);
+                    },1500)
+                }else{
+                    //执行失败
+                    layer.msg(result.msg,{icon:2});
+                }
+            }
+        })
+    })
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

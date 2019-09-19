@@ -1,0 +1,41 @@
+{include file="common:meta" /}
+
+<title>俱乐部玩法 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    <div class="mt-20">
+        <div class="table-responsive">
+            <table style="white-space: nowrap;word-break:keep-all;" class="table table-border table-bordered table-hover table-bg table-sort" id="table">
+                <tr class="text-c">
+                    <th width="50">配置ID</th>
+                    <th>局数</th>
+                    <th>底分</th>
+                    <th>收费模式</th>
+                    <th>人数</th>
+                    <th>最小带入</th>
+                    <th>最大带入</th>
+                    <th>是否私密</th>
+                </tr>
+                {volist name="data" id="vo"}
+                <tr class="text-c">
+                    <td id="id1">{$vo.gcId}</td>
+                    <td>{$vo.rounds}</td>
+                    <td>{$vo.bottomScore}</td>
+                    <td>{if condition="$vo.chargingMode eq 'OWNER'"}房主{elseif condition="$vo.chargingMode eq 'AA'"/}AA{else /}未知{/if}</td>
+                    <td>{$vo.capacity}</td>
+                    <td>{$vo.minChips}</td>
+                    <td>{$vo.maxChips}</td>
+                    <td>{if condition="$vo.secret eq 1"}是{else /}否{/if}</td>
+                </tr>
+                {/volist}
+            </table>
+        </div>
+        <div style="float: right;">{$page}</div>
+    </div>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+{include file="common:meta" /}
+
+<title>管理员列表 - 管理员列表 - RSCMS_V2</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+
+<body>
+    {include file="common:header" /} {include file="common:menu" /}
+
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('index/index')}">首页</a>
+            <span class="c-gray en">&gt;</span> 管理员管理
+            <span class="c-gray en">&gt;</span> 管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a> </nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="cl pd-5 bg-1 bk-gray mt-20">
+                    <span class="l"> <a href="javascript:;" onclick="admin_add('添加管理员','/admin.php/admin/admin/add','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a> </span>
+                </div>
+                <table class="table table-border table-bordered table-bg">
+                    <thead>
+                        <tr class="text-c">
+                            <th width="40">ID</th>
+                            <th width="150">账号</th>
+                            <th width="90">手机</th>
+                            <th width="130">加入时间</th>
+                            <th width="100">是否已启用</th>
+                            <th width="100">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="data" id="vo"}
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.username}</td>
+                            <td>{$vo.mobile}</td>
+                            <td>{$vo.create_time}</td>
+                            <td>
+                                {if condition="$vo.status eq 0"}<span class="label label-success radius">正常</span> {else /}<span class="label label-danger radius">禁用</span> {/if}
+                            </td>
+                            <td class="td-manage">
+
+                                <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','/admin.php/admin/admin/edit?id={$vo.id}','1','800','500')" class="{if condition=" $vo.id eq 1 "}btn disabled radius size-MINI{else /}ml-5 btn btn-warning-outline radius size-MINI{/if}" style="text-decoration:none">编辑</a>
+                                <a title="改密" href="javascript:;" onclick="admin_change_password('管理员改密','/admin.php/admin/admin/adminChangePasswords?id={$vo.id}','1','800','300')" class="ml-5 btn btn-success-outline radius size-MINI" style="text-decoration:none">改密</a>
+                                <a title="删除" href="javascript:;" onclick="admin_del({$vo.id})" class="ml-5 btn btn-danger-outline radius size-MINI" style="text-decoration:none">删除</a>
+                            </td>
+                        </tr>
+                        {/volist}
+                    </tbody>
+                </table>
+                <div style="float: right;">
+                    {$data->render()}
+                </div>
+            </article>
+        </div>
+    </section>
+
+    {include file="common:footer" /}
+
+    <!--请在下方写此页面业务相关的脚本-->
+    {load href="__STATIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"} {load href="__STATIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"} {load href="__STATIC__/admin/lib/laypage/1.2/laypage.js"}
+    <script type="text/javascript">
+        /*
+                                                             参数解释：
+                                                             title	标题
+                                                             url		请求的url
+                                                             id		需要操作的数据id
+                                                             w		弹出层宽度（缺省调默认值）
+                                                             h		弹出层高度（缺省调默认值）
+                                                             */
+        /*管理员-增加*/
+        function admin_add(title, url, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        /*管理员-删除(询问层)*/
+        function admin_del(id) {
+            layer.confirm('确定要删除管理员？', {
+                btn: ['确定', '再想想'] //按钮
+            }, function() {
+                $.post('/admin.php/admin/admin/del', {
+                    'id': id
+                }, function(res) {
+                    if (res.code === 0) {
+                        layer.msg(res.msg, {
+                            icon: 1
+                        });
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 1500)
+                    } else if (res.code === 3) {
+                        layer.msg(res.msg, {
+                            icon: 2
+                        });
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 1500)
+                    } else {
+                        layer.msg(res.msg, {
+                            icon: 2
+                        });
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 1500)
+                    }
+                }, 'json')
+            }, function() {
+                //点击取消之后的操作
+            });
+        }
+
+
+        /*管理员-编辑*/
+        function admin_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+
+        /*管理员改密*/
+        function admin_change_password(title, url, id, w, h) {
+            layer_show(title, url, w, h)
+        }
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>
